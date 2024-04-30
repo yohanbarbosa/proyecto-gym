@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2? family= Wix+Madefor+Text & display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Wix Madefor Text', 'Roboto', sans-serif;
+    background: url('https://i0.wp.com/www.styrkelabbet.se/wp-content/uploads/2014/12/St%C3%B6rre-muskeltillv%C3%A4xt.jpg?resize=768%2C426&ssl=1') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.contenedor_header {
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    
+    align-items: center;
+}
+
+
+.logo{
+    margin-top: 20px;
+    margin-left:60px;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+.logo span{
+    font-size: 30px;
+}
+
+.logo img {
+    width: 130px;
+    margin-right: 5px;
+}
+
+
+
+/* ##############################################section################################################### */
+
+
+.text {
+    display: block;
+    margin: 150px 0 150px 120px;
+}
+
+.text>h2 {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #f05d07;
+}
+
+.text>h3 {
+    font-size: 35px;
+    font-weight: 900px;
+    color: #fff;
+}
+
+.text p {
+    margin-top: 20px;
+    width: 55%;
+    font-size: 20px;
+    font-weight: 500;
+    color: gray;
+}
+.btncomenzar{
+ 
+    display: flex;
+    justify-content: center;
+}
+.btncomenzar a{
+    border-radius: 24px;
+    padding: 16px 56px ;
+    border: 1px solid;
+    text-decoration: none;
+    font-weight: 900;
+    color: #fff;
+}
+.btncomenzar a:hover{
+    background-color: #e4e4e4;
+    color: #000;
+    transition: all ease-in-out .5s;
+}
+
+/* #########################pie de pagina######################################## */
+
+footer {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.parfooter {
+    width: 30%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.parfooter h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.contacto {
+    display: block;
+    text-align: center;
+}
+
+.correo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #aaa;
+}
+
+.correo>i {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.enlaces {
+    display: flex;
+    flex-direction: column;
+}
+
+.enlaces a {
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.redes a {
+    color: #aaa;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.enlaces a:hover {
+    color: #f05d07;
+    transition: all ease-in-out .5s;
+}
+
+.redes a:hover {
+    color: #f05d07;
+    transition: all ease-in-out .5s;
+}
+
+/* ############################################### MEDIA-QUERY ###################################################### */
+
+
+@media Screen and (max-width:1000px) {
+
+ 
+
+    .logo img {
+        width: 170px;
+        margin-right: 0px;
+    }
+
+    .logo span {
+        font-size: 60px;
+    }
+
+    .contenedor_header .menu {
+        position: absolute;
+        left: 40px;
+        top: 40px;
+        display: block;
+    }
+
+    .menu>i {
+        font-size: 80px;
+        position: fixed;
+    }
+
+    .navegation {
+        border: 2px solid rgba(255, 255, 255, .5);
+        backdrop-filter: blur(20px);
+        border: 1px solid #aaa;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        padding-top: 40%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        clip-path: circle(0.0% at 0 0);
+    }
+
+    .navegation a {
+        margin: 30px 0;
+        font-size: 40px;
+    }
+
+    .navegation #buttonbtn {
+        margin: 20px 0 0 10px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 70px;
+        font-size: 30px;
+    }
+
+    .contenedor_header>a {
+        position: absolute;
+        left: 100px;
+        top: 50px;
+    }
+
+
+    .contenedor_header .Menuopen {
+        clip-path: circle(150.0% at 0 0);
+    }
+
+    /* ########################################### section #################################################### */
+
+
+    section {
+        margin-top: 0;
+    }
+
+    .text h2 {
+        width: 300px;
+        font-size: 80px;
+        margin-bottom: 60px;
+    }
+
+    .text h3 {
+        margin-bottom: 60px;
+        font-size: 50px;
+        width: 80%;
+    }
+
+    .text p {
+        margin-top: 40px;
+        width: 800px;
+        font-size: 40px;
+    }
+    .btncomenzar a {
+        padding:  50px 200px;
+        font-size: 60px;
+    }
+
+    /* ################################################### LOGIN ############################################################################# */
+
+.wrapper{
+
+    /* background-color: #fff; */
+    width: 90%;
+    height: 70vh;
+}
+
+.wrapper .icon_close {
+    width: 150px;
+    height: 150px;
+}
+.wrapper .icon_close i {
+    font-size: 100px;
+}
+
+.wrapper .form_login {
+    width: 100%;
+    padding: 40px;
+    margin-top: 90px;
+}
+
+.wrapper .form_login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form_login {
+    transition: none;
+    transform: translateX(-900px);
+}
+
+.wrapper .form_registro {
+    position: absolute;
+    transition: none;
+    transform: translateX(900px);
+  
+}
+
+.wrapper .activate_registro{
+    opacity: 0;
+    border: 2px solid #f05d07;
+}
+
+
+.wrapper.active .form_registro {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper h2 {
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+}
+
+.input_box {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    border-bottom: 2px solid #000;
+    margin: 60px 0;
+}
+
+.input_box input[type= "email"]{font-size: 40px; background: transparent;}
+.input_box input[type= "password"]{font-size: 40px;}
+.input_box input[type= "text"]{font-size: 40px;}
+
+.input_box i{ font-size: 45px;}
+
+.input_box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #fff;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input_box input:focus~label,
+.input_box input:valid~label {
+    top: -25px;
+}
+
+.input_box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input_box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 15px;
+    color: #fff;
+    top: 20px;
+}
+
+.remember-forgot {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #f05d07;
+    margin:0  35px 0 15px;
+   align-items: center;
+}
+
+.remember-forgot input[type = "checkbox" ]{
+    transform: scale(3);
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 95px;
+    background-color: #808080;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 50px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 80px;
+
+}
+
+.login-registre {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin: 70px 0 10px;
+}
+
+.login-registre p a {
+    color: #808080;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.login-registre p a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .form_registro {
+    position: absolute;
+    transform: translate(900px);
+  
+}
+    /* ################################################### footer ########################################################### */
+    footer {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+
+    .parfooter {
+        width: 100%;
+    }
+
+    .parfooter h3 {
+        font-size: 45px;
+
+        margin-bottom: 40px;
+    }
+
+    .correo {
+        font-size: 40px;
+    }
+
+    .enlaces a {
+        font-size: 40px;
+    }
+
+    .redes i {
+        font-size: 40px;
+        margin: 0 10px 0 10px;
+    }
+}
