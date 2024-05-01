@@ -10,10 +10,7 @@
 body {
     box-sizing: border-box;
     font-family: 'Wix Madefor Text', 'Roboto', sans-serif;
-    background: url('https://i0.wp.com/www.styrkelabbet.se/wp-content/uploads/2014/12/St%C3%B6rre-muskeltillv%C3%A4xt.jpg?resize=768%2C426&ssl=1') no-repeat;
-    background-size: cover;
-    background-position: center;
-
+    background: black;
 }
 
 .contenedor_header {
@@ -163,6 +160,96 @@ footer {
     transition: all ease-in-out .5s;
 }
 
+
+/* ############################################# Perfil de usuario ################################################################# */
+
+
+
+
+.tituloPerfilUsuario{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    color: #aaa;
+}
+.contenedor_form{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+  
+}
+
+.formularioUsuario {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.formularioUsuario .input_box{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.input_box label, input {
+    font-size: 30px;
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+}
+.input_box label{
+    width: 250px;
+}
+.input_box input{
+    color: #000;
+    border-radius: 10px; 
+    border: none;
+}
+
+.input_box #gender{
+    width:300px;
+    height: 40px;  
+    font-size: 20px;  
+}
+.input_box #gender option{
+    font-size: 20px;    
+}
+
+.formularioUsuario .btnGuardarPerfil{
+    display: flex;
+    margin: auto;
+    border-radius: 24px;
+    padding: 16px 56px ;
+    border: 1px solid;
+    text-decoration: none;
+    font-weight: 900;
+    color: #fff;
+    background-color: #000;
+    font-size: 20px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+.btnGuardarPerfil:hover{
+    background-color: #e4e4e4;
+    color: #000;
+    transition: all ease-in-out .5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ############################################### MEDIA-QUERY ###################################################### */
 
 
@@ -264,181 +351,7 @@ footer {
         font-size: 60px;
     }
 
-    /* ################################################### LOGIN ############################################################################# */
 
-.wrapper{
-
-    /* background-color: #fff; */
-    width: 90%;
-    height: 70vh;
-}
-
-.wrapper .icon_close {
-    width: 150px;
-    height: 150px;
-}
-.wrapper .icon_close i {
-    font-size: 100px;
-}
-
-.wrapper .form_login {
-    width: 100%;
-    padding: 40px;
-    margin-top: 90px;
-}
-
-.wrapper .form_login {
-    transition: transform .18s ease;
-    transform: translateX(0);
-}
-
-.wrapper.active .form_login {
-    transition: none;
-    transform: translateX(-900px);
-}
-
-.wrapper .form_registro {
-    position: absolute;
-    transition: none;
-    transform: translateX(900px);
-  
-}
-
-.wrapper .activate_registro{
-    opacity: 0;
-    border: 2px solid #f05d07;
-}
-
-
-.wrapper.active .form_registro {
-    transition: transform .18s ease;
-    transform: translateX(0);
-}
-
-.wrapper h2 {
-    font-size: 60px;
-    color: #fff;
-    text-align: center;
-}
-
-.input_box {
-    position: relative;
-    width: 100%;
-    height: 90px;
-    border-bottom: 2px solid #000;
-    margin: 60px 0;
-}
-
-.input_box input[type= "email"]{font-size: 40px; background: transparent;}
-.input_box input[type= "password"]{font-size: 40px;}
-.input_box input[type= "text"]{font-size: 40px;}
-
-.input_box i{ font-size: 45px;}
-
-.input_box label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: #fff;
-    font-weight: 500;
-    pointer-events: none;
-    transition: .5s;
-}
-
-.input_box input:focus~label,
-.input_box input:valid~label {
-    top: -25px;
-}
-
-.input_box input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    color: #fff;
-    font-weight: 600;
-    padding: 0 35px 0 5px;
-}
-
-.input_box .icon {
-    position: absolute;
-    right: 8px;
-    font-size: 15px;
-    color: #fff;
-    top: 20px;
-}
-
-.remember-forgot {
-    font-size: 40px;
-    color: #fff;
-    font-weight: 500;
-    margin: -15px 0 15px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.remember-forgot label input {
-    accent-color: #f05d07;
-    margin:0  35px 0 15px;
-   align-items: center;
-}
-
-.remember-forgot input[type = "checkbox" ]{
-    transform: scale(3);
-}
-
-.remember-forgot a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.remember-forgot a:hover {
-    text-decoration: underline;
-}
-
-.btn {
-    width: 100%;
-    height: 95px;
-    background-color: #808080;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 50px;
-    color: #fff;
-    font-weight: 500;
-    margin-top: 80px;
-
-}
-
-.login-registre {
-    font-size: 40px;
-    color: #fff;
-    text-align: center;
-    font-weight: 500;
-    margin: 70px 0 10px;
-}
-
-.login-registre p a {
-    color: #808080;
-    text-decoration: none;
-    margin-left: 10px;
-    font-weight: 500;
-}
-
-.login-registre p a:hover {
-    text-decoration: underline;
-}
-
-.wrapper .form_registro {
-    position: absolute;
-    transform: translate(900px);
-  
-}
     /* ################################################### footer ########################################################### */
     footer {
         flex-direction: column;
@@ -468,4 +381,46 @@ footer {
         font-size: 40px;
         margin: 0 10px 0 10px;
     }
+
+
+    /* ############################################# Perfil de usuario ################################################################# */
+
+
+.contenedor_form{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+  
+}
+
+.formularioUsuario {
+    display: flex;
+    flex-direction: column;
+}
+.input_box{
+    margin: 10px 0 ;
+}
+
+.input_box label, input {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.input_box input{
+    height: 30px;
+    
+}
+
+.input_box #gender{
+    width:240px;
+    height: 40px;  
+    font-size: 20px;  
+}
+
+.formularioUsuario .btnGuardarPerfil{
+    font-size: 15px;
+}
+
+
 }
