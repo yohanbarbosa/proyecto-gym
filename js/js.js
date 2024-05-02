@@ -8,7 +8,7 @@ const formulario = document.getElementById('user-profile-form');
       const peso = parseFloat(document.getElementById('weight').value);
       const altura = parseFloat(document.getElementById('height').value);
       const género = document.getElementById('gender').value;
-
+  
       // Validar datos
       if (isNaN(edad) || edad <= 0) {
         alert('Edad inválida.');
@@ -34,9 +34,8 @@ const formulario = document.getElementById('user-profile-form');
       };
 
       localStorage.setItem('userProfile', JSON.stringify(datosUsuario));
-
       alert('¡Perfil guardado correctamente!');
-      window.location.href = 'index.html'; // Redirigir a la página principal
+      window.location.href = 'grupomuscular.html'; // Redirigir a la página planeacion
     });
 
     // recuperación y uso del perfil almacenado
