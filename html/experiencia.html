@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,29 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../img/logo.png">
 </head>
+
 <body>
     <div class="titulo">
         <h1>Mi perfil</h1>
     </div>
     <div class="contenedor_checkbox">
+        <form id="user-profile-form" class="formularioUsuario">
+            <div class="checkbox">
+                <h1>cual es tu Experiencia?</h1>
+                <ul>
+                    <li><input type="checkbox" name="principiante" id="principiante"><label for="principiante">principiante</label></li>
+                    <li><input type="checkbox" name="intermedio" id="intermedio"><label for="intermedio">intermedio</label></li>
+                    <li><input type="checkbox" name="avanzado" id="avanzado"><label for="avanzado">Avanzado</label></li>
+                </ul>
+            </div>
 
-        <div class="checkbox">
-            <h1>cual es tu Experiencia?</h1>
-            <ul>
-                <li><input type="checkbox" name="principiante" id="principiante"><label for="principiante">principiante</label></li>
-                <li><input type="checkbox" name="intermedio" id="intermedio"><label for="intermedio">intermedio</label></li>
-                <li><input type="checkbox" name="avanzado" id="avanzado"><label for="avanzado">Avanzado</label></li>
-            </ul>
-        </div>
+            <div class="btncontinuar">
+                <button id="btn" type="submit" value="experiencia">CONTINUAR</button>
+            </div>
 
-        <div class="btncontinuar">
-            <button>
-                <a href="lugarentrenamiento.html">
-                    CONTINUAR
-
-                </a>
-            </button>
-        </div>
-
+        </form>
     </div>
+    <script src="../js/js.js" ></script>
 </body>
+
 </html>
