@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(19, 17, 17);
+}
+.titulo1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(3, 35, 54);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color: #f3f3f3;
+}
+
+.card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+} 
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+</style>
+<body>
+    <div class="titulo1">
+        <h1>BIBLIOTECA EJERCICIOS </h1>
+    </div>
+    
+    
+    
+    
+    
+    <div class="card">
+        <div class="face front">
+            <img src="https://i.blogs.es/947e13/six-pack/450_1000.webp" alt="">
+            <h3>Pecho</h3>
+        </div>
+        <div class="face back">
+            <h3>Pecho</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+            <div class="link">
+                <a href="pecho.html">Ejercicios</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="face front">
+            <img src="https://i.ytimg.com/vi/Xv4qExTKxbU/maxresdefault.jpg" alt="">
+            <h3>Pierna</h3>
+        </div>
+        <div class="face back">
+            <h3>Pierna</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+            <div class="link">
+                <a href="#">Details</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="face front">
+            <img src="https://media.revistagq.com/photos/64d5dd982a2ce6c05ac9003a/16:9/w_2560%2Cc_limit/588683021" alt="">
+            <h3>Hombro</h3>
+        </div>
+        <div class="face back">
+            <h3>Hombro</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+            <div class="link">
+                <a href="#">Details</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="face front">
+            <img src="https://i.blogs.es/47d29a/2560_3000/1366_2000.jpeg" alt="">
+            <h3>Espalda</h3>
+        </div>
+        <div class="face back">
+            <h3>Espalda</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+            <div class="link">
+                <a href="#">Details</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="face front">
+            <img src="https://thebarbell.com/wp-content/uploads/2023/07/cbum-workout-1068x885.png" alt="">
+            <h3>Brazo</h3>
+        </div>
+        <div class="face back">
+            <h3>Brazo</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+            <div class="link">
+                <a href="#">Details</a>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
