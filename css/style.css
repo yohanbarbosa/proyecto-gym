@@ -11,7 +11,7 @@ body {
     box-sizing: border-box;
     font-family: 'Wix Madefor Text', 'Roboto', sans-serif;
     /* background:rgb(218, 218, 218); */
-    background: black;
+    background: rgb(230, 230, 230);
 }
 
 .contenedor_header {
@@ -31,7 +31,8 @@ body {
 .logo a {
     display: flex;
     align-items: center;
-    color: #fff;
+    color: #000;
+    font-weight: 600;
     text-decoration: none;
 }
 .logo span{
@@ -41,6 +42,11 @@ body {
 .logo img {
     width: 130px;
     margin-right: 5px;
+}
+.logo .color_letra{
+    color: #f05d07;
+    margin: 0;
+    font-weight: 700;
 }
 
 
@@ -57,7 +63,7 @@ body {
     font-size: 40px;
     font-weight: 900;
     margin-bottom: 20px;
-    color: #f05d07;
+    color: red;
 }
 
 .text>h3 {
