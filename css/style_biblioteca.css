@@ -236,7 +236,7 @@ html {
 
 	position: absolute;
 	top: 0;
-	right: -3rem;
+	right: -3rem; 
 	z-index: -1;
 	transition: all 0.4s ease;
 }

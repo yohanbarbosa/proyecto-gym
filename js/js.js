@@ -157,7 +157,7 @@ formulario.addEventListener('submit', (evento) => {
       }
       
       localStorage.setItem('userProfiles', JSON.stringify(usuarios));
-    
+      window.location.href = "rutina.html";
       console.log(usuarios);
      
        }
