@@ -12,15 +12,15 @@ if (storedData) {
 const prueba = document.getElementById('funcion');
 prueba.addEventListener("click", function () {
     // Iterar sobre todos los usuarios y generar la rutina para cada uno
-
     const usuario = usuarios[usuarios.length - 1];
+    console.log(usuario);
 
     let objetivo = usuario.objetivo;
     let experiencia = usuario.experiencia;
     let grupoMuscular = usuario.grupoMuscular;
     let edad = usuario.edad;
     let dias = usuario.dias;
-    console.log(`Rutina para ${usuario.nombre}: ${objetivo}, ${experiencia}, ${dias}`);
+    
 
     if (edad >= 16 && edad <= 50) {
 
@@ -37,11 +37,11 @@ function ejerciciosHipertrofia(dias) {
         "piernas": [
             { "nombre": "Sentadillas", "imagen": "https://www.topvelocity.net/wp-content/uploads/2023/11/back-squat.gif" },
             { "nombre": "Prensa de piernas", "imagen": "https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/pernas-leg-press-45-tradicional.gif" },
-            { "nombre": "Curl de femoral", "imagen": "https://www.docteur-fitness.com/wp-content/uploads/2021/06/leg-extension-quadriceps.jpg" },
-            { "nombre": "Elevaciones de gemelos", "imagen": "https://www.lyfta.app/thumbnails/11641201.jpg" }
+            { "nombre": "Curl de femoral", "imagen": "https://doriangym.es/wp-content/uploads/2022/10/curl-femoral-sentado.gif" },
+            { "nombre": "Elevaciones de gemelos", "imagen": "https://shopguarani.com/wp-content/uploads/2022/11/Elevacao-de-panturrilha-com-barra.gif" }
         ],
         "espalda": [
-            { "nombre": "Peso muerto", "imagen": "enlace_imagen_peso_muerto" },
+            { "nombre": "Peso muerto", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/07/oie_jeWBlFOzCoAY-1.gif?fit=360%2C360&ssl=1" },
             { "nombre": "Pull-ups", "imagen": "enlace_imagen_pull-ups" },
             { "nombre": "Remo con barra", "imagen": "enlace_imagen_remo_con_barra" },
             { "nombre": "Pulldown en polea alta", "imagen": "enlace_imagen_pulldown_en_polea_alta" }
@@ -71,35 +71,33 @@ function ejerciciosHipertrofia(dias) {
             { "nombre": "Russian twists", "imagen": "enlace_imagen_russian_twists" }
         ]
     }
-
-
-    // Contenedor donde se mostrará la información en tu HTML
-    const contenedor = document.getElementById('resultado');
+    console.log(dias);
 
     // Iterar sobre los días de la semana y asignar ejercicios para cada día
     dias.forEach(dia => {
-        const diaElemento = document.createElement('div'); // Crear un nuevo elemento div para cada día
+      
+
         switch (dia) {
             case "lunes":
                 bloqueEjercicio(dia, ejercicios.piernas, ejercicios.espalda);
                 break;
-            // case "martes":
-            //     bloqueEjercicio(dia, ejercicios.pecho, ejercicios.hombros);
-            //     break;
-            // case "miercoles":
-            //     bloqueEjercicio(dia, ejercicios.brazos, ejercicios.abdominales);
-            //     break;
-            // case "jueves":
-            //     bloqueEjercicio(dia, ejercicios.piernas, ejercicios.espalda);
-            // case "viernes":
-            //     bloqueEjercicio(dia, ejercicios.pecho, ejercicios.hombros);
-            //     break;
-            // case "sábado":
-            //     bloqueEjercicio(dia, ejercicios.brazos, ejercicios.abdominales);
-            //     break;
-            // case "domingo":
-            //     diaElemento.textContent = "Día de descanso.";
-            //     break;
+            case "martes":
+                bloqueEjercicio(dia, ejercicios.pecho, ejercicios.hombros);
+                break;
+            case "miercoles":
+                bloqueEjercicio(dia, ejercicios.brazos, ejercicios.abdominales);
+                break;
+            case "jueves":
+                bloqueEjercicio(dia, ejercicios.piernas, ejercicios.espalda);
+            case "viernes":
+                bloqueEjercicio(dia, ejercicios.pecho, ejercicios.hombros);
+                break;
+            case "sábado":
+                bloqueEjercicio(dia, ejercicios.brazos, ejercicios.abdominales);
+                break;
+            case "domingo":
+                diaElemento.textContent = "Día de descanso.";
+                break;
             default:
                 diaElemento.textContent = "Día inválido.";
         }
@@ -108,7 +106,7 @@ function ejerciciosHipertrofia(dias) {
 }
 
 function bloqueEjercicio(dia, bloqueUno, bloque_dos) {
-    console.log(bloqueUno);
+  
     const contenedor = document.getElementById('contenedor_rutina');
 
     // Crear el elemento div con clase 'titulo_rutina'
@@ -124,24 +122,31 @@ function bloqueEjercicio(dia, bloqueUno, bloque_dos) {
     contenedor.appendChild(titulo);
 
     // Crear el contenedor para el primer bloque de ejercicios
-    const bloqueEjercicio = document.createElement('div');
+    let bloqueEjercicio = document.createElement('div');
     bloqueEjercicio.classList.add('bloque');
 
     bloqueUno.forEach(ejercicio => {
-        const cardProducto = document.createElement('div');
-        cardProducto.classList.add('card-product');
-        const contenedorImg = document.createElement('div');
+        console.log(ejercicio.nombre);
+        const cardProduct = document.createElement('div'); 
+        cardProduct.classList.add('card-product');
+        const contenedorImg = document.createElement('div'); 
         contenedorImg.classList.add('container-img');
-        // Crear la etiqueta img y configurar su atributo src
         const img = document.createElement('img');
-        img.src = "enlace_imagen_del_ejercicio"; // Reemplaza "enlace_imagen_del_ejercicio" con el enlace real
-        img.alt = ejercicio; // También puedes establecer el atributo alt con el nombre del ejercicio
-        // Agregar la etiqueta img al contenedor de la imagen
+        img.src = ejercicio.imagen;
         contenedorImg.appendChild(img);
-        cardProducto.appendChild(contenedorImg);
-        bloqueEjercicio.appendChild(cardProducto);
+
+        const texto = document.createElement('div'); 
+        texto.classList.add('content-card-product');
+        texto.innerHTML = '<h3>'+ejercicio.nombre+'</h3>'+'<h3>'+"reps"+'</h3>';
+        cardProduct.appendChild(contenedorImg);
+        cardProduct.appendChild(texto);
+        bloqueEjercicio.appendChild(cardProduct);
     });
 
-    contenedor.appendChild();
+    contenedor.appendChild(bloqueEjercicio);
+    
+  
+   
+   
     
 }
