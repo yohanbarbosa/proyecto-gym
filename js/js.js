@@ -55,7 +55,6 @@ formulario.addEventListener('submit', (evento) => {
     
     usuarios.push(perfil);
     localStorage.setItem('userProfiles', JSON.stringify(usuarios));
-    alert("data save");
     window.location.href = 'objetivo.html';
 
   } else if (datos_pagina == "objetivo") {
@@ -76,28 +75,7 @@ formulario.addEventListener('submit', (evento) => {
     }
     
     localStorage.setItem('userProfiles', JSON.stringify(usuarios));
-    window.location.href = 'lugarentrenamiento.html';
-
-  }else if(datos_pagina == "lugar"){           // ... código para manejar la página de lugar de entrenamiento ...
- 
-
- const opcion_lugar = [];
- const checkboxes = document.querySelectorAll('input[type="checkbox"]');
- 
- checkboxes.forEach(checkbox => {
-   if (checkbox.checked) {
-    opcion_lugar.push(checkbox.id);
-   }
- });
- 
- // condicion para revisar que el último usuario agregado existe y es un objeto
- if (usuarios[usuarios.length - 1] && typeof usuarios[usuarios.length - 1] === 'object') {
-   usuarios[usuarios.length - 1].lugar = opcion_lugar;
- }
- localStorage.setItem('userProfiles', JSON.stringify(usuarios));
- window.location.href = "grupomuscular.html";
-
-
+    window.location.href = 'grupomuscular.html';
 
   }else if(datos_pagina == "musculos"){                // ... código para manejar la página de grupo muscular ...
     
@@ -139,51 +117,25 @@ formulario.addEventListener('submit', (evento) => {
     localStorage.setItem('userProfiles', JSON.stringify(usuarios));
     window.location.href = "dias.html";
     
-     }else if(datos_pagina == "dias"){                // ... código para manejar la página de dias de entrenamiento ...
-    
-
+     }else if(datos_pagina === "dias") {
       const opcion_dias = [];
       const checkboxes = document.querySelectorAll('input[type="checkbox"]');
       
       checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          opcion_dias.push(checkbox.id);
-        }
+          if (checkbox.checked) {
+              opcion_dias.push(checkbox.id);
+          }
       });
       
-      // condicion para revisar que el último usuario agregado existe y es un objeto
+      // Guardar los días seleccionados en el último perfil de usuario
       if (usuarios[usuarios.length - 1] && typeof usuarios[usuarios.length - 1] === 'object') {
-        usuarios[usuarios.length - 1].dias = opcion_dias;
+          usuarios[usuarios.length - 1].dias = opcion_dias;
       }
       
       localStorage.setItem('userProfiles', JSON.stringify(usuarios));
       window.location.href = "rutina.html";
       console.log(usuarios);
-     
-       }
+  }
      
 });
-
-
-// const limpiar = document.getElementById('limpiar');
-
-// limpiar.addEventListener('click', function borrar(){
-
-//   localStorage.removeItem('userProfiles');
-//    console.log("borrado done");
-   
-//    window.location.href = "index.html";
-// });
-
-
-
-
-
-
-
-
-
-
-
-
 
