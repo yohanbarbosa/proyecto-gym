@@ -110,31 +110,32 @@ function rutinaDefinicionAleatoria(diasSeleccionados, grupoMuscular) {
     // Objeto que contiene ejercicios de hipertrofia para diferentes grupos musculares
     ejercicios = {
         "piernas": [
-            { "nombre": "Sentadilla búlgara", "imagen": "https://www.example.com/sentadilla-bulgara.gif" },
-            { "nombre": "Peso muerto rumano", "imagen": "https://www.example.com/peso-muerto-rumano.gif" },
-            { "nombre": "Zancadas", "imagen": "https://www.example.com/zancadas.gif" },
-            { "nombre": "Saltos de caja", "imagen": "https://www.example.com/saltos-de-caja.gif" }
+            { "nombre": "Sentadilla búlgara", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_a1pClH2TzpiR.gif?fit=360%2C360&ssl=1" },
+            { "nombre": "Peso muerto rumano", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/07/oie_jeWBlFOzCoAY-1.gif?fit=360%2C360&ssl=1" },
+            { "nombre": "Zancadas", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/11/oie_BNDLY0nDTwH3.gif?fit=360%2C360&ssl=1" },
+            { "nombre": "Sentadillas", "imagen": "https://doriangym.es/wp-content/uploads/2022/09/pin-squat-con-barra.gif" },
+            { "nombre": "Extensiones de piernas" , "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/07/leg-extension-exercice-musculation-min.gif"}
         ],
         "espalda": [
-            { "nombre": "Remo con mancuerna", "imagen": "https://www.example.com/remo-con-mancuerna.gif" },
-            { "nombre": "Dominadas asistidas", "imagen": "https://www.example.com/dominadas-asistidas.gif" },
-            { "nombre": "Jalón al pecho", "imagen": "https://www.example.com/jalon-al-pecho.gif" },
-            { "nombre": "Remo en máquina", "imagen": "https://www.example.com/remo-en-maquina.gif" }
+            { "nombre": "Remo con mancuerna", "imagen": "https://jumpseller.s3.eu-west-1.amazonaws.com/store/grecoromana-co/assets/Remos%20con%20mancuerna%20a%20un%20brazo.gif" },
+            { "nombre": "Dominadas asistidas", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/07/traction-musculation-dos-min.gif" },
+            { "nombre": "Jalón al pecho", "imagen": "https://vitruve.fit/wp-content/uploads/2021/11/vitruvs.gif" },
+            { "nombre": "Remo con barra", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_d1iO8DYEJ7aH.gif?fit=360%2C360&ssl=1" }
         ],
         "pecho": [
-            { "nombre": "Press inclinado con mancuernas", "imagen": "https://www.example.com/press-inclinado-mancuernas.gif" },
-            { "nombre": "Push-ups", "imagen": "https://www.example.com/push-ups.gif" },
-            { "nombre": "Aperturas en banco inclinado", "imagen": "https://www.example.com/aperturas-banco-inclinado.gif" },
-            { "nombre": "Press en máquina", "imagen": "https://www.example.com/press-en-maquina.gif" }
+            { "nombre": "Press inclinado con mancuernas", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_xt4zAwJtGV8l.gif?fit=360%2C360&ssl=1" },
+            { "nombre": "press de banca", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_VZ1q2XQzQfhn.gif?fit=360%2C360&ssl=1" },
+            { "nombre": "Press de banca con agarre cerrado", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/08/oie_xAkQdZQ6fiIX.gif?fit=360%2C360&ssl=1" },
+            { "nombre": "butterfly en máquina", "imagen": "https://modusx.de/wp-content/uploads/butterfly-maschine-parallelgriff.gif" }
         ],
         "hombros": [
-            { "nombre": "Press militar con mancuernas", "imagen": "https://www.example.com/press-militar-mancuernas.gif" },
-            { "nombre": "Pájaros", "imagen": "https://www.example.com/pajaros.gif" },
-            { "nombre": "Arnold press", "imagen": "https://www.example.com/arnold-press.gif" },
-            { "nombre": "Encogimientos de hombros", "imagen": "https://www.example.com/encogimientos-de-hombros.gif" }
+            { "nombre": "Press militar con mancuernas", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/10/oie_WlBA1Cmefanq.gif?fit=360%2C360&ssl=1" },
+            { "nombre": "Elevaciones frontales", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/07/ELEVACION-FRONTAL-CON-MANCUERNAS.gif?fit=360%2C360&ssl=1" },
+            { "nombre": "Arnold press", "imagen": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Arnold-Press.gif" },
+            { "nombre": "Encogimientos de hombros", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/07/ENCOGIMIENTO-DE-HOMBROS-CON-MANCUERNAS.gif?fit=360%2C360&ssl=1" }
         ],
         "brazos": [
-            { "nombre": "Curl de bíceps en banco inclinado", "imagen": "https://www.example.com/curl-biceps-banco-inclinado.gif" },
+            { "nombre": "Curl de bíceps en banco inclinado", "imagen": "https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/rosca-biceps-com-halteres-no-banco-inclinado.gif" },
             { "nombre": "Extensión de tríceps en polea", "imagen": "https://www.example.com/extension-triceps-polea.gif" },
             { "nombre": "Curl de bíceps en polea baja", "imagen": "https://www.example.com/curl-biceps-polea-baja.gif" },
             { "nombre": "Fondos en banco", "imagen": "https://www.example.com/fondos-en-banco.gif" }
@@ -144,6 +145,13 @@ function rutinaDefinicionAleatoria(diasSeleccionados, grupoMuscular) {
             { "nombre": "Bicicleta", "imagen": "https://www.example.com/bicicleta.gif" },
             { "nombre": "Rodillo abdominal", "imagen": "https://www.example.com/rodillo-abdominal.gif" },
             { "nombre": "V-ups", "imagen": "https://www.example.com/v-ups.gif" }
+        ],
+        "gluteos":[
+            { "nombre":  "Peso muerto rumano", "imagen": "https://www.example.com/crunch-inverso.gif" },
+            { "nombre":  "Prensa de piernas", "imagen": "https://www.example.com/bicicleta.gif" },
+            { "nombre":  "Hip Thrusts", "imagen": "https://www.example.com/rodillo-abdominal.gif" },
+            { "nombre":  "Elevación de pelvis en banco", "imagen": "https://www.example.com/v-ups.gif" },
+            { "nombre":   "Patada de glúteo en máquina", "imagen": "https://www.example.com/v-ups.gif" }
         ]
     }
 
@@ -167,8 +175,8 @@ function rutinaDefinicionAleatoria(diasSeleccionados, grupoMuscular) {
 
 }
 
-function rutinaDefinicionAleatoria(diasSeleccionados, grupoMuscular) {
-    // Objeto que contiene ejercicios de hipertrofia para diferentes grupos musculares
+function rutinaBajarPesoAleatoria(diasSeleccionados, grupoMuscular) {
+    // Objeto que contiene ejercicios para bajar peso para diferentes grupos musculares
     ejercicios = {
         "piernas": [
             { "nombre": "Sentadilla con salto", "imagen": "https://www.example.com/sentadilla-con-salto.gif" },
@@ -474,7 +482,7 @@ function rutinaDefinicion(dias) {
     });
 }
 
-function rutinaDefinicion(dias) {
+function rutinaBajarPeso(dias) {
     // Objeto que contiene ejercicios de Definicion para diferentes grupos musculares
     ejercicios = {
         "piernas": [
