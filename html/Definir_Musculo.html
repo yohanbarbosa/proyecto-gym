@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+	--primary-color: #c7a17a;
+	--background-color: #e7e7e7;
+	--dark-color: #151515;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'Poppins', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 20px 0 ;
+}
+
+
+  
+.container_products {
+    display: grid;
+	grid-template-columns: repeat(4, minmax(15rem, 1fr)); /* Modificado para 4 columnas */
+	gap: 3rem;
+	max-width: 80rem; /* Añadido para limitar el ancho máximo */
+	margin: 0 auto; /* Añadido para centrar el contenedor */
+    padding: 40px 10px;
+}
+
+.card-product {
+	background-color: #fff;
+	padding: 2rem 3rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.container-img {
+	position: relative;
+}
+
+.container-img img {
+	width: 100%;
+}
+
+.container-img .discount {
+	position: absolute;
+	left: 0;
+	background-color: var(--primary-color);
+	color: #fff;
+	padding: 2px 1.2rem;
+	border-radius: 1rem;
+	font-size: 1.2rem;
+}
+
+.card-product:hover .discount {
+	background-color: #000;
+}
+
+.button-group {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	position: absolute;
+	top: 0;
+	right: -3rem; 
+	z-index: -1;
+	transition: all 0.4s ease;
+}
+
+.button-group span {
+	border: 1px solid var(--primary-color);
+	padding: 0.8rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.4s ease;
+}
+
+.button-group span:hover {
+	background-color: var(--primary-color);
+}
+
+.button-group span i {
+	font-size: 1.5rem;
+	color: var(--primary-color);
+}
+
+.button-group span:hover i {
+	color: #fff;
+}
+
+.card-product:hover .button-group {
+	z-index: 0;
+	right: -1rem;
+}
+
+.content-card-product {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(4, min-content);
+	row-gap: 1rem;
+}
+
+.stars {
+	grid-row: 1/2;
+	grid-column: 1/-1;
+}
+
+.stars i {
+	font-size: 1.3rem;
+	color: var(--primary-color);
+}
+
+.content-card-product h3 {
+	grid-row: 2/3;
+	grid-column: 1/-1;
+
+	font-weight: 400;
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
+	cursor: pointer;
+}
+
+.content-card-product h3:hover {
+	color: var(--primary-color);
+}
+
+.add-cart {
+	justify-self: start;
+	border: 2px solid var(--primary-color);
+	padding: 1rem;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.4s ease;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.add-cart:hover {
+	background-color: var(--primary-color);
+}
+
+.add-cart i {
+	font-size: 1.5rem;
+	color: var(--primary-color);
+}
+
+.add-cart:hover i {
+	color: #fff;
+}
+
+.content-card-product .price {
+	justify-self: end;
+	align-self: center;
+
+	font-size: 1.7rem;
+	font-weight: 600;
+}
+
+.content-card-product .price span {
+	font-size: 1.5rem;
+	font-weight: 400;
+	text-decoration: line-through;
+	color: #777;
+	margin-left: 0.5rem;
+}
+    </style>
+</head>
+<body>
+    
+
+    <div class="titulo">
+        <h1>ALIMENTOS PARA DEFINIR MUSCULOS</h1>
+    </div>
+
+    <div class="container_products">
+        <!-- Producto 1 --> 
+        <div class="card-product">
+            <div class="container-img">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR_X8coIoEISBd_zYlsjflcE4J-LJYMAJGHvAMSxYExmGwEk4UYKCOuTCC1xS3s" alt="Cafe Irish" />  
+            </div>
+            <div class="content-card-product">           
+                <h3>Tostada integral con mantequilla de maní y plátano</h3>                     
+            </div>
+        </div>
+        <!-- Producto 1 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbj2QVNYDApP5mnZiSW5z2BTCroSBNf1WD49Bk2n3nACS3vlfFnQN6_iULqA_R" alt="Cafe Irish" />  
+            </div>
+            <div class="content-card-product">           
+                <h3>Huevos revueltos con espinacas y queso feta</h3>                     
+            </div>
+        </div>
+        <!-- Producto 1 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRyZAaEuGxgZ_0FB6RyQw9xLnLuhAYKVSAJcoQj2AcS6b5n8R33JrwS9WCAJFiN" alt="Cafe Irish" />  
+            </div>
+            <div class="content-card-product">           
+                <h3>Avena con leche de almendras, frutas y nueces</h3>                     
+            </div>
+        </div>
+        <!-- Producto 1 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn87G7UMhN9DwrJikCPhr8BHW8P4vAzAJcE5kr8MqI4_MpNZWU4O6t273PKlsb" alt="Cafe Irish" />  
+            </div>
+            <div class="content-card-product">           
+                <h3>Ensalada de pollo a la plancha con quinoa y verduras</h3>                     
+            </div>
+        </div>
+        <!-- Producto 1 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSE2MdYHfnIHlQU19GingEcmwPYyEjzNa7uYVIBC98OmTQr9Tz1BoMv7OAzqAu9" alt="Cafe Irish" />  
+            </div>
+            <div class="content-card-product">           
+                <h3>Salmón al horno con batata y brócoli</h3>                     
+            </div>
+        </div>
+        <!-- Producto 1 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTtvkzSo02rIWv93N29Lf_rCphePUZcJnVqi7kA0C1lEvEcnaDarNhc3iCXnxqT" alt="Cafe Irish" />  
+            </div>
+            <div class="content-card-product">           
+                <h3>Ternera a la plancha con puré de patatas y coliflor</h3>                     
+            </div>
+        </div>
+        <!-- Producto 1 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ40HYfeAyEpeuD6NgHROqHvSmlsYGodABmzZglDXog3UhTyCx9sFvV5h2HX1gH" alt="Cafe Irish" />  
+            </div>
+            <div class="content-card-product">           
+                <h3>Batido de proteína con frutas y verduras</h3>                     
+            </div>
+        </div>
+        <!-- Producto 1 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRwemmRlheYIsPa10859oK29exgUT7tOWowqUT3oy24e9RCuPOnAlwb03WI--9N" alt="Cafe Irish" />  
+            </div>
+            <div class="content-card-product">           
+                <h3>Queso cottage con piña</h3>                     
+            </div>
+        </div>	
+        <!-- Producto 1 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSN733enk5lzfRrRCH0fIVBu5locxnLLqSFzKIXivldBaWwsMW778vaw9KWjEgj" alt="Cafe Irish" />  
+            </div>
+            <div class="content-card-product">           
+                <h3>Yogur griego con frutos secos y semillas</h3>                     
+            </div>
+        </div>	
+        
+    </div>
+
+</body>
+</html>
