@@ -57,8 +57,7 @@ formulario.addEventListener('submit', (evento) => {
     localStorage.setItem('userProfiles', JSON.stringify(usuarios));
     window.location.href = 'objetivo.html';
 
-  } else if (datos_pagina == "objetivo") {
-    // ... código para manejar la página de objetivo ...
+  } else if (datos_pagina == "objetivo") {  // ... código para manejar la página de objetivo ...
 
     const opcion_objetivo = [];
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');

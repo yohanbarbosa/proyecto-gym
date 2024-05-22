@@ -1,362 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        :root {
-	--primary-color: #c7a17a;
-	--background-color: #e7e7e7;
-	--dark-color: #151515;
-}
-
-html {
-	font-size: 62.5%;
-	font-family: 'Poppins', sans-serif;
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-.titulo{
-    display: flex;
-    justify-content: center;
-    margin: 40px 0 20px 0 ;
-}
-
-
-  
-.container_products {
-    display: grid;
-	grid-template-columns: repeat(4, minmax(15rem, 1fr)); /* Modificado para 4 columnas */
-	gap: 3rem;
-	max-width: 80rem; /* Añadido para limitar el ancho máximo */
-	margin: 0 auto; /* Añadido para centrar el contenedor */
-    padding: 40px 10px;
-}
-
-.card-product {
-	background-color: #fff;
-	padding: 2rem 3rem;
-	border-radius: 0.5rem;
-	cursor: pointer;
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-}
-
-.container-img {
-	position: relative;
-}
-
-.container-img img {
-	width: 100%;
-}
-
-.container-img .discount {
-	position: absolute;
-	left: 0;
-	background-color: var(--primary-color);
-	color: #fff;
-	padding: 2px 1.2rem;
-	border-radius: 1rem;
-	font-size: 1.2rem;
-}
-
-.card-product:hover .discount {
-	background-color: #000;
-}
-
-.button-group {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-
-	position: absolute;
-	top: 0;
-	right: -3rem; 
-	z-index: -1;
-	transition: all 0.4s ease;
-}
-
-.button-group span {
-	border: 1px solid var(--primary-color);
-	padding: 0.8rem;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-	cursor: pointer;
-	transition: all 0.4s ease;
-}
-
-.button-group span:hover {
-	background-color: var(--primary-color);
-}
-
-.button-group span i {
-	font-size: 1.5rem;
-	color: var(--primary-color);
-}
-
-.button-group span:hover i {
-	color: #fff;
-}
-
-.card-product:hover .button-group {
-	z-index: 0;
-	right: -1rem;
-}
-
-.content-card-product {
-	display: grid;
-	justify-items: center;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(4, min-content);
-	row-gap: 1rem;
-}
-
-.stars {
-	grid-row: 1/2;
-	grid-column: 1/-1;
-}
-
-.stars i {
-	font-size: 1.3rem;
-	color: var(--primary-color);
-}
-
-.content-card-product h3 {
-	grid-row: 2/3;
-	grid-column: 1/-1;
-
-	font-weight: 400;
-	font-size: 1.6rem;
-	margin-bottom: 1rem;
-	cursor: pointer;
-}
-
-.content-card-product h3:hover {
-	color: var(--primary-color);
-}
-
-.add-cart {
-	justify-self: start;
-	border: 2px solid var(--primary-color);
-	padding: 1rem;
-	border-radius: 50%;
-	cursor: pointer;
-	transition: all 0.4s ease;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.add-cart:hover {
-	background-color: var(--primary-color);
-}
-
-.add-cart i {
-	font-size: 1.5rem;
-	color: var(--primary-color);
-}
-
-.add-cart:hover i {
-	color: #fff;
-}
-
-.content-card-product .price {
-	justify-self: end;
-	align-self: center;
-
-	font-size: 1.7rem;
-	font-weight: 600;
-}
-
-.content-card-product .price span {
-	font-size: 1.5rem;
-	font-weight: 400;
-	text-decoration: line-through;
-	color: #777;
-	margin-left: 0.5rem;
-}
-    </style>
 </head>
+
 <body>
-    
 
-    <div class="titulo">
-        <h1>EJERCICIOS DE ESPALDA</h1>
-    </div>
+    <script>
 
-    <div class="container_products">
-        <!-- Producto 1 --> 
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/jalon de espalda.gif" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Jalon al pecho</h3>                     
-            </div>
-        </div>
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/remon sentado con agarre amplio.webp" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Remo con agarre amplio</h3>                     
-            </div>
-        </div>
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/remo con barra.webp" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>remo con barra libre</h3>                     
-            </div>
-        </div>
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/remon sentado con agarre cerrado.webp" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>remo sentado con agarre cerrado</h3>                     
-            </div>
-        </div>
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/jalon con agarre cerrado.gif" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>jalon al pecho con agarre cerrado</h3>                     
-            </div>
-        </div>
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/dominadas.webp" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Dominadas</h3>                     
-            </div>
-        </div>
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/dominada con agarre supino.webp" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Dominadas con agarre supino</h3>                     
-            </div>
-        </div>
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/remo con barra con agarre cerrado.gif" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Remo con barra con agarre cerrado</h3>                     
-            </div>
-        </div>	
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/jalon al pecho en maquina.webp" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Jalon de pecho en maquina</h3>                     
-            </div>
-        </div>	
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/pull-over-poulie.webp" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Pull over</h3>                     
-            </div>
-        </div>	
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/remo t.webp" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Remo T</h3>                     
-            </div>
-        </div>	
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/remo-con-mancuerna-a-una-mano.gif" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Remo con mancuerna a una mano en banco plano</h3>                     
-            </div>
-        </div>	
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/remo unilateral parado con mancuernas.gif" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Remo unilateral parado con mancuernas</h3>                     
-            </div>
-        </div>	
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/REMO CON MANCUERNAS EN BANCO INCLINADO AGARRE SUPINO.gif" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Remo con mancuernas en banco inclinado agarre supino</h3>                     
-            </div>
-        </div>	
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/remo con mnancuernas en banco inclinado.webp" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Remo con mancuernas en banco inclinado</h3>                     
-            </div>
-        </div>	
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/remo unilateral en polea.gif" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Remo uniltaeral en polea</h3>                     
-            </div>
-        </div>	
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/remo en maquina.webp" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Remo en maquina</h3>                     
-            </div>
-        </div>	
-        <!-- Producto 1 -->
-        <div class="card-product">
-            <div class="container-img">
-                <img src="../img/biblioteca de espalda/trapecio.gif" alt="Cafe Irish" />  
-            </div>
-            <div class="content-card-product">           
-                <h3>Trapecio</h3>                     
-            </div>
-        </div>	
-       	
-    </div>
+        function crearRutina( dias, gruposSeleccionados) {
 
+
+            ejercicios = {
+
+                "piernas": [
+                    { "nombre": "Sentadillas", "imagen": "https://www.topvelocity.net/wp-content/uploads/2023/11/back-squat.gif" },
+                    { "nombre": "Prensa de piernas", "imagen": "https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/pernas-leg-press-45-tradicional.gif" },
+                    { "nombre": "Curl de femoral", "imagen": "https://doriangym.es/wp-content/uploads/2022/10/curl-femoral-sentado.gif" },
+                    { "nombre": "Elevaciones de gemelos", "imagen": "https://shopguarani.com/wp-content/uploads/2022/11/Elevacao-de-panturrilha-com-barra.gif" }
+                ],
+                "espalda": [
+                    { "nombre": "Peso muerto", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/07/oie_jeWBlFOzCoAY-1.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Pull-ups", "imagen": "https://newlife.com.cy/wp-content/uploads/2019/08/18661301-Wide-Grip-Pull-Up-on-Dip-Cage_Back_720.gif" },
+                    { "nombre": "Remo con barra", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/07/rowing-barre-min.gif" },
+                    { "nombre": "Pulldown en polea alta", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/07/tirage-vertical-poitrine-min.gif" }
+                ],
+                "pecho": [
+                    { "nombre": "Press de banca", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_VZ1q2XQzQfhn.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Fondos en paralelas", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_6XNNBnRjlp0Y.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Aperturas con maquina", "imagen": "https://www.thingys.com.ar/gymapps/tutorial/mariposa.gif" },
+                    { "nombre": "Press con mancuernas", "imagen": "https://www.thingys.com.ar/gymapps/tutorial/press_manku.gif" }
+                ],
+                "hombros": [
+                    { "nombre": "Press militar con agarre cerrado", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/10/oie_WlBA1Cmefanq.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Elevaciones laterales", "imagen": "https://doriangym.es/wp-content/uploads/2021/11/ejecucion-elevaciones-laterales-con-mancuernas.gif" },
+                    { "nombre": "Elevaciones frontales", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/07/ELEVACION-FRONTAL-CON-MANCUERNAS.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Face pulls", "imagen": "https://burnfit.io/wp-content/uploads/2023/11/FACE_PULL.gif" }
+                ],
+                "brazos": [
+                    { "nombre": "Curl de bíceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_7KyizCzE8xCM.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Extensiones de tríceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_8qpEpBt6F08r.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Curl martillo", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_hsOXQMAjXz1l.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Press de banca cerrado", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/08/oie_xAkQdZQ6fiIX.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Rompe craneos", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/06/barre-front.gif" },
+                    { "nombre": "Fondos en paralelas", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_6XNNBnRjlp0Y.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Copa de triceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_UzW294JNSeIm.gif?fit=360%2C360&ssl=1" }
+                ],
+                "abdominales": [
+                    { "nombre": "Crunches", "imagen": "https://fitnessprogramer.com/wp-content/uploads/2015/11/Crunch.gif" },
+                    { "nombre": "Planchas", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/08/oie_O24AjQFHvK6p.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Elevaciones de piernas colgado", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/11/oie_a6F3n65peFFG.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Russian twists", "imagen": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Russian-Twist.gif" }
+                ],
+                "gluteos": [
+                    { "nombre": "Sentadilla búlgara", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_a1pClH2TzpiR.gif?fit=360%2C360&ssl=1" },
+                    { "nombre": "Peso muerto con mancuernas", "imagen": "https://paramujerfitness.com/wp-content/uploads/2021/11/peso-muerto-con-mancuerna.gif" },
+                    { "nombre": "Hip thrust", "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3D1j7D16GUDg2CEePt0Vx_j02LYaoTIbnteUsJMq2WQ&s" }
+                ]
+            }
+            
+
+
+            
+            
+            if (dias.length >= gruposSeleccionados.length) {
+                
+                
+                
+                const rutina = {};
+                
+                // Inicializar la rutina para cada día con un array vacío
+                dias.forEach(dia => {
+                    rutina[dia] = [];
+                });
+                
+                let grupoIndex = 0;
+                
+                // Iterar sobre los días seleccionados
+                dias.forEach(dia => {
+                    // Obtener el grupo muscular correspondiente
+                    const grupo = gruposSeleccionados[grupoIndex];
+                    
+                    // Obtener los ejercicios del grupo
+                    const ejerciciosGrupo = ejercicios[grupo];
+                    
+                    // Agregar todos los ejercicios del grupo al día correspondiente
+                    rutina[dia] = rutina[dia].concat(ejerciciosGrupo);
+                    
+                    // Actualizar el índice del grupo para el próximo día
+                    grupoIndex++;
+                    
+                    // Si se alcanza el último grupo muscular, volver al primero
+                    if (grupoIndex >= gruposSeleccionados.length) {
+                        grupoIndex = 0;
+                    }
+                });
+                console.log(rutina);
+                return rutina;
+                
+                
+            } else if (diasSeleccionados < gruposSeleccionados) {
+                console.log("otra condicion");
+                
+                
+                const rutina = {};
+                const gruposMusculares = Object.keys(ejercicios);
+                const ejerciciosPorDia = Math.min(7, Math.ceil(gruposMusculares.length / dias.length)); // Máximo de 7 ejercicios por día
+                const gruposPorDia = Math.ceil(gruposSeleccionados.length / dias.length); // Número de grupos musculares por día
+                
+                let grupoIndex = 0;
+                
+                dias.forEach(dia => {
+                    rutina[dia] = [];
+                    
+                    for (let i = 0; i < gruposPorDia; i++) {
+                        if (grupoIndex >= gruposSeleccionados.length) {
+                            grupoIndex = 0; // Reiniciar si se supera la cantidad de grupos
+                        }
+                        const grupo = gruposSeleccionados[grupoIndex];
+                        const ejerciciosGrupo = ejercicios[grupo];
+                        
+                        // Determinar el rango de ejercicios a agregar para este grupo muscular
+                        const startIndex = i * ejerciciosPorDia;
+                        const endIndex = Math.min(startIndex + ejerciciosPorDia, ejerciciosGrupo.length);
+                        
+                        // Agregar los ejercicios al día correspondiente en la rutina
+                        rutina[dia] = rutina[dia].concat(ejerciciosGrupo.slice(startIndex, endIndex));
+                        
+                        grupoIndex++;
+                    }
+                });
+
+                return rutina;
+            }
+            
+        }
+        
+        
+        
+        const diasSeleccionados = ["lunes", "martes", "miercoles", "jueves", "viernes"];
+        const gruposSeleccionados = ["piernas", "espalda", "pecho", "brazos"];
+        
+        const rutinaPrincipiante = crearRutina( diasSeleccionados, gruposSeleccionados);
+        const rutinaIntermedio = crearRutina( diasSeleccionados, gruposSeleccionados);
+        const rutinaAvanzado = crearRutina( diasSeleccionados, gruposSeleccionados);
+        
+        
+        
+        </script>
 </body>
+
 </html>
