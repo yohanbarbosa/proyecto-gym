@@ -381,7 +381,7 @@ html {
   
 
 .container {
-    background-color: white;
+    background-color: #1b201c;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -394,7 +394,7 @@ html {
 
 h1 {
     text-align: center;
-    color: #333;
+    color: white;
 }
 
 form {
@@ -404,7 +404,7 @@ form {
 
 label {
     margin-top: 10px;
-    color: #555;
+    color: white;
 }
 
 input, select, button {
@@ -434,10 +434,10 @@ button:hover {
 
 #result h2 {
     text-align: center;
-    color: #333;
+    color: white;
 }
 
 #result p {
-    color: #555;
+    color: white;
     font-size: 16px;
 }
