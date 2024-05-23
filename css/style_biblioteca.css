@@ -2,25 +2,28 @@
 
 @import url('https://fonts.googleapis.com/css2? family= Wix+Madefor+Text & display=swap');
 
-
-
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
     box-sizing: border-box;
-    font-family: sans-serif;
-}
+    font-family: 'Wix Madefor Text', 'Roboto', sans-serif;
+    background: url('../img/fondoPantalla.jpg'), no-repeat;
+    background-size: cover;
 
-body{
-    background: rgb(19, 17, 17);
 
 }
-.titulo1{
+.titulo_biblioteca{
     display: flex;
     justify-content: center;
-    margin: 20px 0 ;
-    background-color: #fff;
     padding: 50px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, .5);
+    color: white;
+}
+.titulo_biblioteca h1{
+    color: white;
 }
 
 .contenedor {
@@ -343,4 +346,98 @@ html {
 	text-decoration: line-through;
 	color: #777;
 	margin-left: 0.5rem;
+}
+
+
+.arrow{
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    left: 40px ;
+    padding: 10px 20px;
+    border-radius: 15px;
+  
+}
+.arrow i {
+    color: #000;
+    font-size: 40px ;
+}
+
+.arrow:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/* ############################################ ESTILOS DE LA CALCULADORA ######################################## */
+
+
+
+
+  
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color: #555;
+}
+
+input, select, button {
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#result {
+    margin-top: 20px;
+    display: none;
+}
+
+#result h2 {
+    text-align: center;
+    color: #333;
+}
+
+#result p {
+    color: #555;
+    font-size: 16px;
 }

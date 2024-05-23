@@ -10,7 +10,6 @@
 body {
     box-sizing: border-box;
     font-family: 'Wix Madefor Text', 'Roboto', sans-serif;
-    /* background:rgb(218, 218, 218); */
     background: url('../img/fondoPantalla.jpg'), no-repeat;
     background-size: cover;
 
@@ -258,26 +257,6 @@ input {
     transition: all ease-in-out .5s;
 }
 
-/* .formularioUsuario #limpiar{
-    display: flex;
-    margin: auto;
-    border-radius: 24px;
-    padding: 16px 56px ;
-    border: 1px solid;
-    text-decoration: none;
-    font-weight: 900;
-    color: #fff;
-    background-color: #000;
-    font-size: 20px;
-    margin-top: 60px;
-    margin-bottom: 100px;
-}
-
-#limpiar:hover{
-    background-color: #e4e4e4;
-    color: #000;
-    transition: all ease-in-out .5s;
-} */
 
 
 /* ############################################################### Planificacion de entrenamiento ######################################*/
@@ -400,7 +379,7 @@ header #mensaje_header {
 }
 
 #contenedor_rutina {
-    display: flex;
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -411,8 +390,7 @@ header #mensaje_header {
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
-    transition: all ease-in-out .3s;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    padding-top:150px ;
 }
 
 #cerrar_rutina {

@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "pecho": [
                 { "nombre": "Press inclinado con mancuernas", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_xt4zAwJtGV8l.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "press de banca", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_VZ1q2XQzQfhn.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Press de banca con agarre cerrado", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/08/oie_xAkQdZQ6fiIX.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Press de banca con agarre cerrado", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/12/oie_cUHqXRt2TLnb.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "butterfly en máquina", "imagen": "https://modusx.de/wp-content/uploads/butterfly-maschine-parallelgriff.gif", "reps": "4 series x 12 repeticiones" }
             ],
             "hombros": [
@@ -519,7 +519,7 @@ function imprimirEjerciciosB(rutina) {
 document.addEventListener('DOMContentLoaded', function () {
     const titulosRutina = document.querySelectorAll('.titulo_dia');
     const bloquesDeEjercicio = document.querySelectorAll('.bloque');
-
+    const contenedor = document.getElementById('contenedor_rutina');
     const usuario = usuarios[usuarios.length - 1];
 
     if (usuario.musculos == "balanceado") {
@@ -536,12 +536,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Alternar la clase 'activar' para cada bloque de ejercicio
                     bloqueEjercicioUno.classList.toggle('bloqueActive');
                     bloqueEjercicioDos.classList.toggle('bloqueActive');
-                    const alturaActual = contenedor.style.height;
-                    if (alturaActual === "auto" || alturaActual === "") {
-                        contenedor.style.height = "1000px";
-                    } else {
-                        contenedor.style.height = "auto";
-                    }
+
+                // Ajustar la altura y margen del contenedor
+                if (bloqueEjercicioUno.classList.contains('bloqueActive')) {
+       
+                    contenedor.style.padding = "20px";
+                } else {
+  
+                    contenedor.style.padding = "150px";
+                }
+
+                    
                 }
             });
         });
