@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // titulo de saludo ubicado en el header
     const mensajeHeader = document.getElementById('mensaje_header');
     const mensaje = document.createElement('p');
-    mensaje.textContent = `Bienvenido ${usuario.nombre}`;
+    mensaje.innerHTML = `Bienvenido <span>${usuario.nombre} </span> `;
     mensajeHeader.appendChild(mensaje);
 
     console.log(usuario);
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "brazos": [
                 { "nombre": "Curl de bíceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_7KyizCzE8xCM.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Extensiones de tríceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_8qpEpBt6F08r.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Curl martillo", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_hsOXQMAjXz1l.gif?fit=360%2C360&ssl=1" },
+                { "nombre": "Curl martillo", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_hsOXQMAjXz1l.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones"  },
                 { "nombre": "Rompe craneos", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/06/barre-front.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Copa de triceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_UzW294JNSeIm.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" }
             ],
@@ -471,7 +471,7 @@ function imprimirEjerciciosB(rutina) {
         // Recorre cada grupo de ejercicios del día
         ejerciciosDelDia.forEach((ejercicio, ejercicioIndex) => {
 
-            // Recorre cada ejercicio del día
+            // crear un contenedor para cada ejercicio del día
             const ejercicioElemento = document.createElement('div');
             ejercicioElemento.classList.add('card-product');
             // Crea un elemento <div> para la imagen del ejercicio
@@ -487,7 +487,11 @@ function imprimirEjerciciosB(rutina) {
             texto.classList.add('content-card-product');
             texto.innerHTML = `<p>${ejercicio.nombre}</p>`;
             ejercicioElemento.appendChild(texto);
-
+            //Crea un elemento <div> para la cantidad de reps
+            const reps = document.createElement('div');
+            reps.classList.add('content-card-product');
+            reps.innerHTML = `<p>${ejercicio.reps}</p>`;
+            ejercicioElemento.appendChild(reps);
             // Agrega el elemento del ejercicio al bloque de ejercicios del día
             bloqueEjercicios.appendChild(ejercicioElemento);
             // Agregar un ID único al bloque de ejercicio
@@ -533,20 +537,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Verificar si ambos bloques existen
                 if (bloqueEjercicioUno && bloqueEjercicioDos) {
-                    // Alternar la clase 'activar' para cada bloque de ejercicio
                     bloqueEjercicioUno.classList.toggle('bloqueActive');
                     bloqueEjercicioDos.classList.toggle('bloqueActive');
+                    const isActive = bloqueEjercicioUno.classList.contains('bloqueActive');
+                    
 
-                // Ajustar la altura y margen del contenedor
+                // Ajustar la  margen del contenedor
                 if (bloqueEjercicioUno.classList.contains('bloqueActive')) {
-       
+                  
                     contenedor.style.padding = "20px";
                 } else {
-  
+                  
                     contenedor.style.padding = "150px";
                 }
+                
+                if (isActive) {
+                    const titulos = document.querySelectorAll('.titulo_dia');
+                    titulos.forEach(t => {
+                        t.style.display = 'block';
+                    });
+                }
 
-                    
+                   
                 }
             });
         });
