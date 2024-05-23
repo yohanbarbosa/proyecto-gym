@@ -6,8 +6,18 @@ if (storedData) {
     usuarios = JSON.parse(storedData);
 }
 
-const activar = document.getElementById('activar_rutina');
-activar.addEventListener("click", function () {
+document.addEventListener('DOMContentLoaded', function () {
+    const activarRutina = document.getElementById('activar_rutina');
+    const contenedorRutina = document.getElementById('contenedor_rutina');
+    const cerrarRutina = document.getElementById('cerrar_rutina');
+
+    activarRutina.addEventListener('click', function () {
+        contenedorRutina.style.display = 'block';
+    });
+
+    cerrarRutina.addEventListener('click', function () {
+        contenedorRutina.style.display = 'none';
+    });
 
     const usuario = usuarios[usuarios.length - 1];
     let grupoMuscular = usuario.musculos;
@@ -526,8 +536,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Alternar la clase 'activar' para cada bloque de ejercicio
                     bloqueEjercicioUno.classList.toggle('bloqueActive');
                     bloqueEjercicioDos.classList.toggle('bloqueActive');
-                    const contenedorFunciones = document.getElementById('contenedor_funciones');
-                    contenedorFunciones.classList.toggle('quitar_contenedor_funciones');
+                    const alturaActual = contenedor.style.height;
+                    if (alturaActual === "auto" || alturaActual === "") {
+                        contenedor.style.height = "1000px";
+                    } else {
+                        contenedor.style.height = "auto";
+                    }
                 }
             });
         });
