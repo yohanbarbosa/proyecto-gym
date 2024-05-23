@@ -10,8 +10,7 @@
 body {
     box-sizing: border-box;
     font-family: 'Wix Madefor Text', 'Roboto', sans-serif;
-    background: url('../img/fondoPantalla.jpg'), no-repeat;
-    background-size: cover;
+    background-color: #101616;
 
 
 }
@@ -364,7 +363,9 @@ html {
 }
 
 .arrow:hover{
+    transition: all ease-in-out;
     cursor: pointer;
+    background-color: #a8c947;
 }
 
 

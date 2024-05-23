@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 { "nombre": "Pulldown en polea alta", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/07/tirage-vertical-poitrine-min.gif", "reps": "4 series x 12 repeticiones" }
             ],
             "pecho": [
-                { "nombre": "Press de banca", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_VZ1q2XQzQfhn.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Press de banca ", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_VZ1q2XQzQfhn.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Fondos en paralelas", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_6XNNBnRjlp0Y.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Aperturas con maquina", "imagen": "https://www.thingys.com.ar/gymapps/tutorial/mariposa.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Press con mancuernas", "imagen": "https://www.thingys.com.ar/gymapps/tutorial/press_manku.gif", "reps": "4 series x 12 repeticiones" }
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 { "nombre": "Curl de bíceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_7KyizCzE8xCM.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Extensiones de tríceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_8qpEpBt6F08r.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Curl martillo", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_hsOXQMAjXz1l.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Press de banca cerrado", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/08/oie_xAkQdZQ6fiIX.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Press de banca cerrado", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/12/oie_cUHqXRt2TLnb.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Rompe craneos", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/06/barre-front.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Fondos en paralelas", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_6XNNBnRjlp0Y.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Copa de triceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_UzW294JNSeIm.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" }
