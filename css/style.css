@@ -403,6 +403,10 @@ header #mensaje_header {
 
     width: 100%;
     padding: 20px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: #101616;
 }
 
 .titulo_dia {
@@ -495,8 +499,71 @@ header #mensaje_header {
     color: var(--primary-color);
 }
 
+.cerrar_rutina{
+    background-color: white;
+    width: 40px;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    right: 80px;
+}
+.cerrar_rutina i {
+    font-size: 40px;
+}
+.cerrar_rutina:hover{
+    background-color: red;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+}
 
 /* ################################ contenedor de funcionalidades ############################### */
+
+
+.contenedor_opciones{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.contenedor_opciones .opcion{
+    width: 200px;
+    background-color: #1b201c;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.opcion a{
+    text-decoration: none;
+    color: #000;
+}
+.opcion .logo_opcion{
+    background-color: #aaa;
+    text-align: center;
+    width: 50px;
+    padding: 10px 0 ;
+    border-radius: 50%;
+}
+.opcion i {
+    font-size: 30px;
+}
+
+.opcion h1 {
+    color: white;
+    margin: 20px 0 ;
+    font-size: 20px;
+}
+.opcion p{
+    color: #aaa;
+}
+
+
+
+
+
+
 
 #contenedor_funciones {
     width: 430px;

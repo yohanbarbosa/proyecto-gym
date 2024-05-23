@@ -6,7 +6,8 @@ if (storedData) {
     usuarios = JSON.parse(storedData);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+const activar = document.getElementById('activar_rutina');
+activar.addEventListener("click", function () {
 
     const usuario = usuarios[usuarios.length - 1];
     let grupoMuscular = usuario.musculos;
