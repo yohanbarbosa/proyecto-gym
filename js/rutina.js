@@ -6,6 +6,7 @@ if (storedData) {
     usuarios = JSON.parse(storedData);
 }
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const activarRutina = document.getElementById('activar_rutina');
     const contenedorRutina = document.getElementById('contenedor_rutina');
@@ -20,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const usuario = usuarios[usuarios.length - 1];
-    let grupoMuscular = usuario.musculos;
 
     // titulo de saludo ubicado en el header
     const mensajeHeader = document.getElementById('mensaje_header');
@@ -28,7 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
     mensaje.innerHTML = `Bienvenido <span>${usuario.nombre} </span> `;
     mensajeHeader.appendChild(mensaje);
 
-    console.log(usuario);
+
+
+    rutina(usuario);
+
+});
+
+function rutina(usuario) {
+
     const contenedorEjercicios = {
 
         hipertrofia: {
@@ -154,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "brazos": [
                 { "nombre": "Curl de bíceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_7KyizCzE8xCM.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Extensiones de tríceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_8qpEpBt6F08r.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Curl martillo", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_hsOXQMAjXz1l.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones"  },
+                { "nombre": "Curl martillo", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_hsOXQMAjXz1l.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Rompe craneos", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/06/barre-front.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Copa de triceps", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_UzW294JNSeIm.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" }
             ],
@@ -173,342 +180,152 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
     }
+    const grupoMuscular = usuario.musculos;
+    const experiencia = usuario.experiencia;
+    const objetivo = usuario.objetivo;
+    const dias = usuario.dias;
 
-    if (grupoMuscular == "balanceado") {
-        rutinaA(usuario, contenedorEjercicios);
+    const rutina = {};
+
+
+    let objetivoEjercios = null;
+
+    if (objetivo == 'hipertrofia') {
+        objetivoEjercios = contenedorEjercicios.hipertrofia;
+    } else if (objetivo == 'definir musculo') {
+        objetivoEjercios = contenedorEjercicios.definicion;
+    } else if (objetivo == 'bajar peso') {
+        objetivoEjercios = contenedorEjercicios.bajarPeso;
     } else {
-        rutinaB(usuario, contenedorEjercicios);
+        console.log("no hay un objetivo seleccionado ");
+        return
     }
 
-});
+    const ejercicioExperiencia = {};
+
+    if (experiencia == 'principiante') {
 
 
-function rutinaA(usuario, contenedorEjercicios) {
+        for (const grupo of grupoMuscular) {
+            const ejercicios = objetivoEjercios[grupo];
+            const ejerciciosPrincipiante = ejercicios.slice(0, 3);
+            ejercicioExperiencia[grupo] = ejerciciosPrincipiante;
+        }
 
-
-    let edad = usuario.edad;
-    let dias = usuario.dias;
-    let objetivo = usuario.objetivo;
-
-    if (edad >= 16 && edad <= 50) {
-
-        if (objetivo == "hipertrofia") {
-            generarRutinaA(dias, contenedorEjercicios.hipertrofia);
-        } else if (objetivo == "definir musculo") {
-            generarRutinaA(dias, contenedorEjercicios.definicion);
-        } else if (objetivo == "bajar peso") {
-            generarRutinaA(dias, contenedorEjercicios.bajarPeso);
+    } else if (experiencia == 'intermedio' || experiencia == 'avanzado') {
+        for (const grupo of grupoMuscular) {
+            const ejercicios = objetivoEjercios[grupo];
+            const ejerciciosPrincipiante = ejercicios.slice(0, 5);
+            ejercicioExperiencia[grupo] = ejerciciosPrincipiante;
         }
     }
 
-}
 
-function generarRutinaA(dias, ejercicios) {
-
-
-    // Iterar sobre los días de la semana y asignar ejercicios para cada día
     dias.forEach(dia => {
-        switch (dia) {
-            case "lunes":
-                imprimirEjerciciosA(dia, ejercicios.piernas, ejercicios.espalda, "Piernas", "Espalda");
-                break;
-            case "martes":
-                imprimirEjerciciosA(dia, ejercicios.pecho, ejercicios.hombros, "Pecho", "Hombros");
-                break;
-            case "miercoles":
-                imprimirEjerciciosA(dia, ejercicios.brazos, ejercicios.Abdomen, "Brazos", "Abdominales");
-                break;
-            case "jueves":
-                imprimirEjerciciosA(dia, ejercicios.piernas, ejercicios.gluteos, "Piernas", "Gluteos");
-                break;
-            case "viernes":
-                imprimirEjerciciosA(dia, ejercicios.pecho, ejercicios.hombros, "Pecho", "Hombros");
-                break;
-            case "sábado":
-                imprimirEjerciciosA(dia, ejercicios.brazos, ejercicios.Abdomen, "Brazos", "Abdominales");
-                break;
-            case "domingo":
-                diaElemento.textContent = "Día de descanso.";
-                break;
-            default:
-                diaElemento.textContent = "Día inválido.";
-        }
-
-    });
-}
-
-let indiceBloque = 0; // Variable global para el índice único
-function imprimirEjerciciosA(dia, bloqueUno, bloqueDos, nombre1, nombre2) {
-    // Obtén el contenedor donde deseas mostrar la rutina
-    const rutinaContainer = document.getElementById('contenedor_rutina');
-    // Crear el contenedor de grupo para este día
-    const contenedorGrupo = document.createElement('div');
-    contenedorGrupo.classList.add('contenedor_grupo'); // Agregar clase
-
-    // Crear un elemento <div> para el día
-    const diaElemento = document.createElement('div');
-    diaElemento.classList.add('titulo_dia');
-    diaElemento.id = indiceBloque;
-    // Crear el título del día
-    const tituloDia = document.createElement('h2');
-    tituloDia.textContent = `Día: ${dia}`;
-    diaElemento.appendChild(tituloDia);
-
-    // Agregar el elemento 'titulo' al contenedor principal
-    contenedorGrupo.appendChild(diaElemento);
-
-    // Crear el primer bloque de ejercicios
-    const bloqueEjerciciosUno = document.createElement('div');
-    bloqueEjerciciosUno.classList.add('bloque');
-
-    // crear el bloque contenedoor del nombre del grupo muscular
-    const nombreEjercicio = document.createElement('div');
-    nombreEjercicio.classList.add("nombre_ejercicio");
-    // crear etiqueta P contenedora de la informacion 
-    const pNombre = document.createElement('p');
-    pNombre.textContent = nombre1;
-    nombreEjercicio.appendChild(pNombre);
-    bloqueEjerciciosUno.appendChild(nombreEjercicio);
-
-    // Recorrer y agregar los ejercicios del primer bloque
-    bloqueUno.forEach(ejercicio => {
-        const cardProduct = document.createElement('div');
-        cardProduct.classList.add('card-product');
-
-        const contenedorImg = document.createElement('div');
-        contenedorImg.classList.add('container-img');
-        const img = document.createElement('img');
-        img.src = ejercicio.imagen;
-        contenedorImg.appendChild(img);
-
-        const texto = document.createElement('div');
-        texto.classList.add('content-card-product');
-        texto.innerHTML = `<h3>${ejercicio.nombre}</h3><h3>${ejercicio.reps}</h3>`;
-        cardProduct.appendChild(contenedorImg);
-        cardProduct.appendChild(texto);
-
-
-        bloqueEjerciciosUno.id = indiceBloque;
-        bloqueEjerciciosUno.appendChild(cardProduct);
+        rutina[dia] = [];
     });
 
-    // Agregar el primer bloque de ejercicios al contenedor de grupo
-    contenedorGrupo.appendChild(bloqueEjerciciosUno);
+    const gruposBarajados = grupoMuscular.sort(() => Math.random() - 0.5);
 
-    // Incrementar el índice para el siguiente bloque
-    indiceBloque++;
-
-
-    // Crear el segundo bloque de ejercicios
-    const bloqueEjerciciosDos = document.createElement('div');
-    bloqueEjerciciosDos.classList.add('bloque');
-    // crear el bloque contenedoor del nombre del grupo muscular
-    const nombreEjercicio2 = document.createElement('div');
-    nombreEjercicio2.classList.add("nombre_ejercicio");
-    // crear etiqueta P contenedora de la informacion 
-    const pNombre2 = document.createElement('p');
-    pNombre2.textContent = nombre2;
-    nombreEjercicio2.appendChild(pNombre2);
-    bloqueEjerciciosDos.appendChild(nombreEjercicio2);
-    // Recorrer y agregar los ejercicios del segundo bloque
-
-    bloqueDos.forEach(ejercicio => {
-        const cardProduct = document.createElement('div');
-        cardProduct.classList.add('card-product');
-
-        const contenedorImg = document.createElement('div');
-        contenedorImg.classList.add('container-img');
-        const img = document.createElement('img');
-        img.src = ejercicio.imagen;
-        contenedorImg.appendChild(img);
-
-        const texto = document.createElement('div');
-        texto.classList.add('content-card-product');
-        texto.innerHTML = `<h3>${ejercicio.nombre}</h3><h3>${ejercicio.reps}</h3>`;
-        cardProduct.appendChild(contenedorImg);
-        cardProduct.appendChild(texto);
-        bloqueEjerciciosDos.id = indiceBloque - indiceBloque;
-        bloqueEjerciciosDos.appendChild(cardProduct);
+    let indiceGrupo = 0;
+    dias.forEach(dia => {
+        rutina[dia] = [];
+        const grupo1 = gruposBarajados[indiceGrupo];
+        const grupo2 = gruposBarajados[(indiceGrupo + 1) % grupoMuscular.length];
+        const ejercicios1 = ejercicioExperiencia[grupo1];
+        const ejercicios2 = ejercicioExperiencia[grupo2];
+        rutina[dia].push({ grupo: grupo1, ejercicios: ejercicios1 });
+        rutina[dia].push({ grupo: grupo2, ejercicios: ejercicios2 });
+        indiceGrupo = (indiceGrupo + 2) % grupoMuscular.length;
     });
-
-    // Agregar el segundo bloque de ejercicios al contenedor de grupo
-    contenedorGrupo.appendChild(bloqueEjerciciosDos);
-
-    // Agregar el contenedor de grupo al contenedor de rutina
-    rutinaContainer.appendChild(contenedorGrupo);
+    console.log(rutina);
+    imprimir(rutina);
 }
 
 
-function rutinaB(usuario, contenedorEjercicios) {
-    let grupoMuscular = usuario.musculos;
-    let edad = usuario.edad;
-    let dias = usuario.dias;
-    let objetivo = usuario.objetivo;
-    if (edad >= 16 && edad <= 50) {
-
-        if (objetivo == "hipertrofia") {
-            generarRutinaB(dias, grupoMuscular, contenedorEjercicios.hipertrofia);
-        } else if (objetivo == "definir musculo") {
-            generarRutinaB(dias, grupoMuscular, contenedorEjercicios.definicion);
-        } else if (objetivo == "bajar peso") {
-            generarRutinaB(dias, grupoMuscular, contenedorEjercicios.bajarPeso);
-        }
-    }
-}
-
-function generarRutinaB(dias, gruposSeleccionados, ejercicios) {
-
-
-    if (dias.length >= gruposSeleccionados.length) {
-        const rutina = {};
-
-        // Inicializar la rutina para cada día con un array vacío
-        dias.forEach(dia => {
-            rutina[dia] = [];
-        });
-
-        let grupoIndex = 0;
-
-        // Iterar sobre los días seleccionados
-        dias.forEach(dia => {
-            // Verificar que el día no sea undefined
-            if (dia === undefined) {
-                console.error('Error: uno de los días es undefined.');
-                return;
-            }
-
-            // Obtener el grupo muscular correspondiente
-            const grupo = gruposSeleccionados[grupoIndex];
-
-            // Verificar que el grupo no sea undefined
- 
-
-            // Obtener los ejercicios del grupo
-            const ejerciciosGrupo = ejercicios[grupo];
-
-            // Verificar que los ejercicios del grupo no sean undefined
-            if (ejerciciosGrupo === undefined) {
-                console.error(`Error: no se encontraron ejercicios para el grupo muscular "${grupo}".`);
-                return;
-            }
-
-            // Agregar todos los ejercicios del grupo al día correspondiente
-            rutina[dia] = rutina[dia].concat(ejerciciosGrupo);
-
-            // Actualizar el índice del grupo para el próximo día
-            grupoIndex++;
-
-            // Si se alcanza el último grupo muscular, volver al primero
-            if (grupoIndex >= gruposSeleccionados.length) {
-                grupoIndex = 0;
-            }
-        });
-
-
-        imprimirEjerciciosB(rutina)
-
-    } else if (diasSeleccionados < gruposSeleccionados) {
-
-
-
-        const rutina = {};
-        const gruposMusculares = Object.keys(ejercicios);
-        const ejerciciosPorDia = Math.min(7, Math.ceil(gruposMusculares.length / dias.length)); // Máximo de 7 ejercicios por día
-        const gruposPorDia = Math.ceil(gruposSeleccionados.length / dias.length); // Número de grupos musculares por día
-
-        let grupoIndex = 0;
-
-        dias.forEach(dia => {
-            rutina[dia] = [];
-
-            for (let i = 0; i < gruposPorDia; i++) {
-                if (grupoIndex >= gruposSeleccionados.length) {
-                    grupoIndex = 0; // Reiniciar si se supera la cantidad de grupos
-                }
-                const grupo = gruposSeleccionados[grupoIndex];
-                const ejerciciosGrupo = ejercicios[grupo];
-
-                // Determinar el rango de ejercicios a agregar para este grupo muscular
-                const startIndex = i * ejerciciosPorDia;
-                const endIndex = Math.min(startIndex + ejerciciosPorDia, ejerciciosGrupo.length);
-
-                // Agregar los ejercicios al día correspondiente en la rutina
-                rutina[dia] = rutina[dia].concat(ejerciciosGrupo.slice(startIndex, endIndex));
-
-                grupoIndex++;
-            }
-        });
-
-        imprimirEjerciciosB(rutina)
-    }
-
-}
-
-function imprimirEjerciciosB(rutina) {
-
-
-    //  contenedor donde se muestra la rutina
+function imprimir(rutina) {
+    // Contenedor donde se muestra la rutina
     const rutinaContainer = document.getElementById('contenedor_rutina');
 
-    Object.entries(rutina).forEach(([dia, ejerciciosDelDia], index) => {
+    for (let dia in rutina) {
+        if (Array.isArray(rutina[dia])) {
+            // Crear un contenedor de grupo
+            const contenedorGrupo = document.createElement('div');
+            contenedorGrupo.classList.add('contenedor_grupo'); // Agregar clase
 
-        // Crear un contenedor de grupo
-        const contenedorGrupo = document.createElement('div');
-        contenedorGrupo.classList.add('contenedor_grupo'); // Agregar clase
+            // Crear un elemento <div> para el día
+            const diaElemento = document.createElement('div');
+            diaElemento.classList.add('titulo_dia');
+            const tituloDia = document.createElement('h2');
+            tituloDia.textContent = `Día: ${dia}`;
+            diaElemento.appendChild(tituloDia);
 
-        // Crear un elemento <div> para el día
-        const diaElemento = document.createElement('div');
-        diaElemento.classList.add('titulo_dia');
+            // Crear un bloque de ejercicios para el día
+            const bloqueEjercicios = document.createElement('div');
+            bloqueEjercicios.classList.add('bloque');
 
-        // Crea un elemento <h2> para mostrar el nombre del día
-        const tituloDia = document.createElement('h2');
-        tituloDia.textContent = `Día: ${dia}`;
-        diaElemento.appendChild(tituloDia);
-        // Crea un bloque de ejercicios para el día
-        const bloqueEjercicios = document.createElement('div');
-        bloqueEjercicios.classList.add('bloque');
+            // Iterar sobre los grupos de ejercicios de este día
+            rutina[dia].forEach(grupo => {
+                // Crear un contenedor para cada grupo de ejercicios del día
+                const grupoElemento = document.createElement('div');
+                grupoElemento.classList.add('grupo');
 
-        // Recorre cada grupo de ejercicios del día
-        ejerciciosDelDia.forEach((ejercicio, ejercicioIndex) => {
+                // Crear un contenedor para cada nombre de grupo muscular del día
 
-            // crear un contenedor para cada ejercicio del día
-            const ejercicioElemento = document.createElement('div');
-            ejercicioElemento.classList.add('card-product');
-            // Crea un elemento <div> para la imagen del ejercicio
-            const contenedorImg = document.createElement('div');
-            contenedorImg.classList.add('container-img');
-            const img = document.createElement('img');
-            img.src = ejercicio.imagen;
-            contenedorImg.appendChild(img);
-            ejercicioElemento.appendChild(contenedorImg);
+                const elementoTitulo = document.createElement('div');
+                elementoTitulo.classList.add('nombre_ejercicio')
 
-            // Crea un elemento <div> para el nombre del ejercicio
-            const texto = document.createElement('div');
-            texto.classList.add('content-card-product');
-            texto.innerHTML = `<p>${ejercicio.nombre}</p>`;
-            ejercicioElemento.appendChild(texto);
-            //Crea un elemento <div> para la cantidad de reps
-            const reps = document.createElement('div');
-            reps.classList.add('content-card-product');
-            reps.innerHTML = `<p>${ejercicio.reps}</p>`;
-            ejercicioElemento.appendChild(reps);
-            // Agrega el elemento del ejercicio al bloque de ejercicios del día
-            bloqueEjercicios.appendChild(ejercicioElemento);
-            // Agregar un ID único al bloque de ejercicio
-            bloqueEjercicios.id = `${index}`;
-            // Agregar un ID único al bloque del dia
-            diaElemento.id = `${index}`;
-        });
+                // Crear un elemento <h3> para el nombre del grupo muscular
+                const tituloGrupo = document.createElement('h3');
+                tituloGrupo.textContent = `Grupo Muscular: ${grupo.grupo}`;
+                elementoTitulo.appendChild(tituloGrupo);
+                bloqueEjercicios.appendChild(elementoTitulo);
+                // Iterar sobre los ejercicios de este grupo
+                grupo.ejercicios.forEach(ejercicio => {
+                    // Crear un contenedor para cada ejercicio del grupo
+                    const ejercicioElemento = document.createElement('div');
+                    ejercicioElemento.classList.add('card-product');
 
-        // Agrega el título del día al contenedor del grupo de ejercicios
-        contenedorGrupo.appendChild(diaElemento);
 
-        // Agregar el bloque de ejercicios al contenedor del grupo de ejercicios
-        contenedorGrupo.appendChild(bloqueEjercicios);
+                    // Crear un contenedor para cada ejercicio del grupo
+                    const contenedorImg = document.createElement('div');
+                    contenedorImg.classList.add('container-img');
 
-        // Agregar el contenedor de grupo al contenedor de rutina
-        rutinaContainer.appendChild(contenedorGrupo);
-    });
+                    // Crear un elemento <img> para la imagen del ejercicio
+                    const img = document.createElement('img');
+                    img.src = ejercicio.imagen;
+                    contenedorImg.appendChild(img);
+                    ejercicioElemento.appendChild(contenedorImg);
+
+
+                    // Crear un elemento <p> para el nombre del ejercicio
+                    const nombreEjercicio = document.createElement('p');
+                    nombreEjercicio.textContent = ejercicio.nombre;
+                    ejercicioElemento.appendChild(nombreEjercicio);
+
+                    // Crear un elemento <p> para la cantidad de repeticiones
+                    const repsEjercicio = document.createElement('p');
+                    repsEjercicio.textContent = `Reps: ${ejercicio.reps}`;
+                    ejercicioElemento.appendChild(repsEjercicio);
+
+                    // Agregar el elemento del ejercicio al contenedor del grupo
+                    grupoElemento.appendChild(ejercicioElemento);
+                });
+
+                // Agregar el contenedor del grupo al bloque de ejercicios del día
+                bloqueEjercicios.appendChild(grupoElemento);
+            });
+
+            // Agregar el título del día y el bloque de ejercicios al contenedor de grupo
+            contenedorGrupo.appendChild(diaElemento);
+            contenedorGrupo.appendChild(bloqueEjercicios);
+
+            // Agregar el contenedor de grupo al contenedor de rutina
+            rutinaContainer.appendChild(contenedorGrupo);
+        } else {
+            console.log(`${dia}: ${rutina[dia]}`);
+        }
+    }
 
 
 
@@ -516,69 +333,26 @@ function imprimirEjerciciosB(rutina) {
 
 
 
-
-//############################################### Animacion #############################################################################
 
 
 document.addEventListener('DOMContentLoaded', function () {
     const titulosRutina = document.querySelectorAll('.titulo_dia');
     const bloquesDeEjercicio = document.querySelectorAll('.bloque');
     const contenedor = document.getElementById('contenedor_rutina');
-    const usuario = usuarios[usuarios.length - 1];
 
-    if (usuario.musculos == "balanceado") {
-        titulosRutina.forEach((titulo, index) => {
-            titulo.addEventListener('click', function () {
-                const id = titulo.id;
-                const texto = titulo.querySelector('h2').textContent;
-                // Acceder al primer y segundo bloque de ejercicios correspondientes al título
-                const bloqueEjercicioUno = bloquesDeEjercicio[index * 2]; // El primer bloque
-                const bloqueEjercicioDos = bloquesDeEjercicio[index * 2 + 1]; // El segundo bloque
 
-                // Verificar si ambos bloques existen
-                if (bloqueEjercicioUno && bloqueEjercicioDos) {
-                    bloqueEjercicioUno.classList.toggle('bloqueActive');
-                    bloqueEjercicioDos.classList.toggle('bloqueActive');
-                    const isActive = bloqueEjercicioUno.classList.contains('bloqueActive');
-                    
 
-                // Ajustar la  margen del contenedor
-                if (bloqueEjercicioUno.classList.contains('bloqueActive')) {
-                  
-                    contenedor.style.padding = "20px";
-                } else {
-                  
-                    contenedor.style.padding = "150px";
-                }
-                
-                if (isActive) {
-                    const titulos = document.querySelectorAll('.titulo_dia');
-                    titulos.forEach(t => {
-                        t.style.display = 'block';
-                    });
-                }
-
-                   
-                }
-            });
+    titulosRutina.forEach((titulo, index) => {
+        titulo.addEventListener('click', function () {
+            // Accede al bloque de ejercicio correspondiente al título
+            const bloqueEjercicio = bloquesDeEjercicio[index];
+            if (bloqueEjercicio) {
+                // Realiza alguna acción con el bloque de ejercicio
+                bloqueEjercicio.classList.toggle('bloqueActive');
+                // (Opcional) También puedes realizar otras acciones, como mostrar u ocultar más contenido
+            }
         });
-    } else {
-        titulosRutina.forEach((titulo, index) => {
-            titulo.addEventListener('click', function () {
-                const id = titulo.id;
-                const texto = titulo.querySelector('h2').textContent;
-
-                // Acceder al bloque de ejercicio correspondiente al título
-                const bloqueEjercicio = bloquesDeEjercicio[index];
-                if (bloqueEjercicio) {
-                    // Realizar alguna acción con el bloque de ejercicio
-                    bloqueEjercicio.classList.toggle('bloqueActive');
-                    const contenedorFunciones = document.getElementById('contenedor_funciones');
-                    contenedorFunciones.classList.toggle('quitar_contenedor_funciones');
-                }
-            });
-        });
-    }
-});
+    });
 
 
+})

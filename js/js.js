@@ -16,7 +16,7 @@ formulario.addEventListener('submit', (evento) => {
   if (datos_pagina == "perfil") {
     // ... código para manejar la página de perfil ...
        
-    const nombre = document.getElementById('name').value.trim();
+    const nombre = document.getElementById('name').value.trim().toUpperCase();
     const edad = parseInt(document.getElementById('age').value);
     const peso = parseFloat(document.getElementById('weight').value);
     const altura = parseFloat(document.getElementById('height').value);

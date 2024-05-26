@@ -219,7 +219,7 @@ input {
     color: #000;
     border-radius: 10px;
     border: none;
- 
+    padding: 5PX 10px;
 }
 
 .input_box #gender {
@@ -240,16 +240,17 @@ input {
     border: 1px solid;
     text-decoration: none;
     font-weight: 900;
-    color: #fff;
-    background-color: #000;
+    color: #a8c947;
     font-size: 20px;
     margin-top: 60px;
     margin-bottom: 100px;
+    background-color: #101616;
 }
 
 #btn:hover {
-    background-color: #e4e4e4;
-    color: #000;
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
     transition: all ease-in-out .5s;
 }
 
@@ -348,6 +349,7 @@ input {
 }
 
 
+
 /* ######################################################### seccion de rutinas ####################################################### */
 
 nav {
@@ -356,7 +358,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  
+
 }
 
 header #mensaje_header {
@@ -370,7 +372,8 @@ header #mensaje_header {
     color: #aaa;
     border-bottom: 2px solid rgba(255, 255, 255, .5);
 }
-#mensaje_header span{
+
+#mensaje_header span {
     color: #a8c947;
 }
 
@@ -390,7 +393,7 @@ header #mensaje_header {
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
-    padding-top:150px ;
+    padding-top: 150px;
 }
 
 #cerrar_rutina {
@@ -407,11 +410,11 @@ header #mensaje_header {
     font-size: 30px;
     width: 40%;
     margin: auto;
-    border-bottom:1px solid #a8c947 ;
+    border-bottom: 1px solid #a8c947;
 }
 
 .titulo_dia h2 {
-    margin: 10px 0 ;
+    margin: 10px 0;
     padding-left: 20px;
     color: #aaa;
 
@@ -423,6 +426,7 @@ header #mensaje_header {
 
 .bloque {
     display: flex;
+    flex-direction: column;
     padding: 0;
     transform: scale(0);
     height: 0px;
@@ -441,9 +445,20 @@ header #mensaje_header {
     justify-content: center;
 }
 
+.grupo {
+    display: flex;
+    padding: 0;
+    height: auto;
+    transition: all ease-in-out .3s;
+    width: 100%;
+    overflow-x: auto;
+    gap: 20px;
+
+}
+
 .nombre_ejercicio {
-    top: 6px;
-    position: absolute;
+    background: #a8c947;
+    width: 20%;
     align-items: center;
     border-radius: 20px;
     padding: 0px 10px;
@@ -500,7 +515,7 @@ header #mensaje_header {
 }
 
 
-#cerrar_rutina{
+#cerrar_rutina {
     background-color: white;
     width: 40px;
     text-align: center;
@@ -508,32 +523,36 @@ header #mensaje_header {
     top: 10px;
     right: 80px;
 }
+
 #cerrar_rutina i {
     font-size: 40px;
     color: #000;
 }
-#cerrar_rutina:hover{
+
+#cerrar_rutina:hover {
     background-color: red;
     cursor: pointer;
     transition: all ease-in-out .3s;
 }
+
 
 /* ################################ contenedor de funcionalidades ############################### */
 
 
 .contenedor_opciones{
     display: flex;
+    gap: 2%;
     justify-content: center;
-    gap: 30px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
 }
 .contenedor_opciones .opcion{
-    width: 200px;
+    width: 15%;
     background-color: #1b201c;
-    padding: 30px;
+    padding: 1%;
     cursor: pointer;
 }
 
@@ -544,8 +563,8 @@ header #mensaje_header {
 .opcion .logo_opcion{
     background-color: #aaa;
     text-align: center;
-    width: 50px;
-    padding: 10px 0 ;
+    width:26%;
+    padding: 5% 0 ;
     border-radius: 50%;
 }
 .opcion i {
@@ -554,11 +573,12 @@ header #mensaje_header {
 
 .opcion h1 {
     color: white;
-    margin: 20px 0 ;
-    font-size: 20px;
+    margin: 10% 0 ;
+    font-size: 100%;
 }
 .opcion p{
     color: #aaa; 
+    font-size: 90%;
 }
 
 
