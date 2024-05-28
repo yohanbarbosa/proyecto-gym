@@ -171,11 +171,9 @@ function rutina(usuario) {
                 { "nombre": "Plancha lateral", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/09/oie_zDXSsE9snQd4.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Crunch en bicicleta", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/08/oie_s6xpR0W1n2Gt.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" }
             ],
-            "cardio": [
-                { "nombre": "Burpees", "imagen": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/burpee-movement.gif", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Saltos de tijera", "imagen": "https://www.clinicacemes.com/wp-content/uploads/2020/04/jumping-jacks-2.gif", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Correr en el lugar", "imagen": "https://i.pinimg.com/originals/a6/be/1c/a6be1c681b8fed93f642078c207a43e0.gif", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Saltar la cuerda", "imagen": "https://hips.hearstapps.com/hmg-prod/images/skip-1568116471.gif?crop=0.860xw:1.00xh;0.0363xw,0&resize=980:*", "reps": "4 series x 12 repeticiones" }
+            "gluteos": [
+                { "nombre": "Sentadilla búlgara", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_a1pClH2TzpiR.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Hip Thrusts", "imagen": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Hip-Thrust.gif", "reps": "4 series x 12 repeticiones" }
             ]
         }
 
@@ -225,19 +223,44 @@ function rutina(usuario) {
         rutina[dia] = [];
     });
 
-    const gruposBarajados = grupoMuscular.sort(() => Math.random() - 0.5);
 
-    let indiceGrupo = 0;
-    dias.forEach(dia => {
-        rutina[dia] = [];
-        const grupo1 = gruposBarajados[indiceGrupo];
-        const grupo2 = gruposBarajados[(indiceGrupo + 1) % grupoMuscular.length];
-        const ejercicios1 = ejercicioExperiencia[grupo1];
-        const ejercicios2 = ejercicioExperiencia[grupo2];
-        rutina[dia].push({ grupo: grupo1, ejercicios: ejercicios1 });
-        rutina[dia].push({ grupo: grupo2, ejercicios: ejercicios2 });
-        indiceGrupo = (indiceGrupo + 2) % grupoMuscular.length;
-    });
+    
+
+    if (grupoMuscular.length <= 3) {
+
+        for (let i = 0; i < dias.length; i++) {
+            const grupo = grupoMuscular[i % grupoMuscular.length];
+            const ejercicios = ejercicioExperiencia[grupo];
+            rutina[dias[i]].push({ grupo, ejercicios });
+        }
+    
+    } else if (dias.length < 3) {
+        const gruposBarajados = grupoMuscular.sort(() => Math.random() - 0.5);
+        dias.forEach(dia => {
+            rutina[dia] = [];
+            gruposBarajados.forEach(grupo => {
+                const ejercicios = ejercicioExperiencia[grupo];
+                rutina[dia].push({ grupo: grupo, ejercicios: ejercicios });
+            });
+        });
+
+    } else {
+
+        const gruposBarajados = grupoMuscular.sort(() => Math.random() - 0.5);
+
+        let indiceGrupo = 0;
+        dias.forEach(dia => {
+            rutina[dia] = [];
+            const grupo1 = gruposBarajados[indiceGrupo];
+            const grupo2 = gruposBarajados[(indiceGrupo + 1) % grupoMuscular.length];
+            const ejercicios1 = ejercicioExperiencia[grupo1];
+            const ejercicios2 = ejercicioExperiencia[grupo2];
+            rutina[dia].push({ grupo: grupo1, ejercicios: ejercicios1 });
+            rutina[dia].push({ grupo: grupo2, ejercicios: ejercicios2 });
+            indiceGrupo = (indiceGrupo + 2) % grupoMuscular.length;
+        });
+    }
+
     console.log(rutina);
     imprimir(rutina);
 }

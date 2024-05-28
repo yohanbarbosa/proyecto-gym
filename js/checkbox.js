@@ -37,17 +37,31 @@ if (datos_pagina == 'musculos') {
 
                 if (checkedCheckboxes.length > limiteDias) {
                     checkbox.checked = false;
-                    alert("Solo puedes seleccionar un máximo de 6 días.");
+
+                    const contenedor_alerta = document.getElementsByClassName('mensaje_alerta')[0];
+                    const mensaje = document.createElement('p');
+                    mensaje.classList.add("texto_alerta");
+                    mensaje.textContent = "Debe descansar por lo menos un dia a la semana";
+                    contenedor_alerta.appendChild(mensaje);
+                    contenedor_alerta.classList.add("activar_alerta");
+
+                    function ocultarAlerta() {
+                        contenedor_alerta.classList.remove("activar_alerta");
+                        mensaje.textContent = "";
+                    }
+
+                    const tiempoVisible = 2000; // Por ejemplo, 1000 milisegundos = 1 segundo
+                    setTimeout(ocultarAlerta, tiempoVisible);
                 }
             });
         });
     });
 
-} else if (datos_pagina == 'objetivo'){
+} else if (datos_pagina == 'objetivo') {
 
     document.addEventListener('DOMContentLoaded', function () {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    
+
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function () {
                 if (checkbox.checked) {
@@ -60,5 +74,21 @@ if (datos_pagina == 'musculos') {
             });
         });
     });
-    
+
+} else if (datos_pagina == 'experiencia') {
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (checkbox.checked) {
+                    checkboxes.forEach(cb => {
+                        if (cb !== checkbox) {
+                            cb.checked = false;
+                        }
+                    });
+                }
+            });
+        });
+    });
 }

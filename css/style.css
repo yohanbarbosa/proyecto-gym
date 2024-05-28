@@ -305,7 +305,7 @@ input {
 }
 
 .contenedor_checkbox .checkbox ul li label:hover {
-    background-color:#a8c947c2;
+    background-color: #a8c947c2;
     color: #000;
 }
 
@@ -321,7 +321,7 @@ input {
 
 .contenedor_checkbox .btncontinuar {
     margin: auto;
-    padding-top: 100px;
+    padding-top: 40px;
 }
 
 .btncontinuar button {
@@ -348,6 +348,67 @@ input {
     color: #a8c947;
 }
 
+/* ################################################ ALERTAS DE VALIDACIONES ################################################### */
+
+.mensaje_alerta {
+    display: none;
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(40px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.activar_alerta {
+    display: flex;
+}
+
+
+.mensaje_alerta p {
+    color: #a8c947;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+
+#cerrar_alerta {
+    background-color: white;
+    width: 40px;
+    text-align: center;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+}
+
+#cerrar_alerta i {
+    font-size: 40px;
+    color: #000;
+}
+
+#cerrar_alerta:hover {
+    background-color: red;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* ######################################################### seccion de rutinas ####################################################### */
@@ -373,6 +434,20 @@ header #mensaje_header {
     border-bottom: 2px solid rgba(255, 255, 255, .5);
 }
 
+header .icon_salir {
+    margin-right: 60px;
+    padding: 2px;
+    position: relative;
+}
+
+.icon_salir:hover{
+    border: 1px solid #a8c947;
+    cursor: pointer;
+    transition: all ease-in-out .4s;
+    border-radius: 5px;
+}
+
+
 #mensaje_header span {
     color: #a8c947;
 }
@@ -380,6 +455,7 @@ header #mensaje_header {
 .contenedor_grupo {
     margin-top: 10px;
 }
+
 
 #contenedor_rutina {
     display: none;
@@ -539,7 +615,7 @@ header #mensaje_header {
 /* ################################ contenedor de funcionalidades ############################### */
 
 
-.contenedor_opciones{
+.contenedor_opciones {
     display: flex;
     gap: 2%;
     justify-content: center;
@@ -549,35 +625,39 @@ header #mensaje_header {
     transform: translate(-50%, -50%);
     width: 100%;
 }
-.contenedor_opciones .opcion{
+
+.contenedor_opciones .opcion {
     width: 15%;
     background-color: #1b201c;
     padding: 1%;
     cursor: pointer;
 }
 
-.opcion a{
+.opcion a {
     text-decoration: none;
     color: #000;
 }
-.opcion .logo_opcion{
+
+.opcion .logo_opcion {
     background-color: #aaa;
     text-align: center;
-    width:26%;
-    padding: 5% 0 ;
+    width: 26%;
+    padding: 5% 0;
     border-radius: 50%;
 }
+
 .opcion i {
     font-size: 30px;
 }
 
 .opcion h1 {
     color: white;
-    margin: 10% 0 ;
+    margin: 10% 0;
     font-size: 100%;
 }
-.opcion p{
-    color: #aaa; 
+
+.opcion p {
+    color: #aaa;
     font-size: 90%;
 }
 
@@ -769,9 +849,9 @@ header #mensaje_header {
     }
 
 
-    
-    
-    
+
+
+
 
 
 }
