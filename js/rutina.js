@@ -44,19 +44,25 @@ function rutina(usuario) {
                 { "nombre": "Sentadillas", "imagen": "https://www.topvelocity.net/wp-content/uploads/2023/11/back-squat.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Prensa de piernas", "imagen": "https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/pernas-leg-press-45-tradicional.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Curl de femoral", "imagen": "https://doriangym.es/wp-content/uploads/2022/10/curl-femoral-sentado.gif", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Elevaciones de gemelos", "imagen": "https://shopguarani.com/wp-content/uploads/2022/11/Elevacao-de-panturrilha-com-barra.gif", "reps": "4 series x 12 repeticiones" }
+                { "nombre": "Elevaciones de gemelos", "imagen": "https://shopguarani.com/wp-content/uploads/2022/11/Elevacao-de-panturrilha-com-barra.gif", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "extensiones", "imagen": "../img/biblioteca de pierna/extensiones.gif", "reps": "4 series x 12 repeticiones"  },
+                { "nombre": "Avanzadas en smith", "imagen": "../img/biblioteca de pierna/avanzadas.gif" , "reps": "4 series x 12 repeticiones" },
             ],
             "espalda": [
                 { "nombre": "Peso muerto", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/07/oie_jeWBlFOzCoAY-1.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Pull-ups", "imagen": "https://newlife.com.cy/wp-content/uploads/2019/08/18661301-Wide-Grip-Pull-Up-on-Dip-Cage_Back_720.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Remo con barra", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/07/rowing-barre-min.gif", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Pulldown en polea alta", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/07/tirage-vertical-poitrine-min.gif", "reps": "4 series x 12 repeticiones" }
+                { "nombre": "Pulldown en polea alta", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/07/tirage-vertical-poitrine-min.gif", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Jalon al pecho", "imagen": "../img/biblioteca de espalda/jalon de espalda.gif", "reps": "4 series x 12 repeticiones"  },
+                { "nombre": "Remo con agarre amplio", "imagen": "../img/biblioteca de espalda/remon sentado con agarre amplio.webp" , "reps": "4 series x 12 repeticiones" },
             ],
             "pecho": [
                 { "nombre": "Press de banca ", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_VZ1q2XQzQfhn.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Fondos en paralelas", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_6XNNBnRjlp0Y.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Aperturas con maquina", "imagen": "https://www.thingys.com.ar/gymapps/tutorial/mariposa.gif", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Press con mancuernas", "imagen": "https://www.thingys.com.ar/gymapps/tutorial/press_manku.gif", "reps": "4 series x 12 repeticiones" }
+                { "nombre": "Press con mancuernas", "imagen": "https://www.thingys.com.ar/gymapps/tutorial/press_manku.gif", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "pecho inclinado con mancuernas", "imagen": "../img/biblioteca de ejercicios/pecho inclinado con mancuernas.gif", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "pecho inclinado con smith", "imagen": "../img/biblioteca de ejercicios/pecho inclinado con smith.webp", "reps": "4 series x 12 repeticiones" },
             ],
             "hombros": [
                 { "nombre": "Press militar con agarre cerrado", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/10/oie_WlBA1Cmefanq.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
@@ -224,7 +230,7 @@ function rutina(usuario) {
     });
 
 
-    
+
 
     if (grupoMuscular.length <= 3) {
 
@@ -233,7 +239,7 @@ function rutina(usuario) {
             const ejercicios = ejercicioExperiencia[grupo];
             rutina[dias[i]].push({ grupo, ejercicios });
         }
-    
+
     } else if (dias.length < 3) {
         const gruposBarajados = grupoMuscular.sort(() => Math.random() - 0.5);
         dias.forEach(dia => {
