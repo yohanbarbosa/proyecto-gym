@@ -50,7 +50,6 @@ body {
 }
 
 
-
 /* ##############################################section################################################### */
 
 
@@ -100,74 +99,7 @@ body {
     transition: all ease-in-out .5s;
 }
 
-/* ######################### pie de pagina ######################################## */
 
-footer {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin-top: 150px;
-}
-
-.parfooter {
-    width: 30%;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.parfooter h3 {
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.contacto {
-    display: block;
-    text-align: center;
-}
-
-.correo {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    color: #aaa;
-}
-
-.correo>i {
-    font-size: 30px;
-    margin-right: 10px;
-}
-
-.enlaces {
-    display: flex;
-    flex-direction: column;
-}
-
-.enlaces a {
-    margin-bottom: 20px;
-    text-decoration: none;
-    color: #aaa;
-    font-weight: 500;
-}
-
-.redes a {
-    color: #aaa;
-    font-size: 20px;
-    margin-left: 15px;
-}
-
-.enlaces a:hover {
-    color: #a8c947;
-    transition: all ease-in-out .5s;
-}
-
-.redes a:hover {
-    color: #a8c947;
-    transition: all ease-in-out .5s;
-}
 
 
 /* ############################################# Perfil de usuario ################################################################# */
@@ -454,6 +386,7 @@ header .icon_salir {
 
 .contenedor_grupo {
     margin-top: 10px;
+    transition: all ease-in-out .3s;
 }
 
 
@@ -509,6 +442,7 @@ header .icon_salir {
     transition: all ease-in-out .3s;
     width: 100%;
     overflow-x: auto;
+ 
 }
 
 .bloqueActive {
@@ -527,9 +461,7 @@ header .icon_salir {
     height: auto;
     transition: all ease-in-out .3s;
     width: 100%;
-    overflow-x: auto;
     gap: 20px;
-
 }
 
 .nombre_ejercicio {
@@ -556,11 +488,17 @@ header .icon_salir {
 
 .container-img {
     position: relative;
-    width: 100px;
+    width: 180px;
 }
 
 .container-img img {
     width: 100%;
+    transition:  .4s;
+}
+
+.container-img img:hover{
+    transform: scale(1.2);
+    transition: all ease-in-out .4s;
 }
 
 .content-card-product {
@@ -576,7 +514,7 @@ header .icon_salir {
     margin-bottom: 10px;
 }
 
-.content-card-product .info {
+.card-product .info {
     grid-row: 2/3;
     grid-column: 1/-1;
     font-weight: 400;
@@ -586,8 +524,8 @@ header .icon_salir {
 
 }
 
-.content-card-product .info p:hover {
-    color: var(--primary-color);
+.card-product .info p:hover {
+    color: #a8c947;
 }
 
 
@@ -642,7 +580,7 @@ header .icon_salir {
     background-color: #aaa;
     text-align: center;
     width: 26%;
-    padding: 5% 0;
+    padding: 7% 0;
     border-radius: 50%;
 }
 

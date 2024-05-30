@@ -45,16 +45,16 @@ function rutina(usuario) {
                 { "nombre": "Prensa de piernas", "imagen": "https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/pernas-leg-press-45-tradicional.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Curl de femoral", "imagen": "https://doriangym.es/wp-content/uploads/2022/10/curl-femoral-sentado.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Elevaciones de gemelos", "imagen": "https://shopguarani.com/wp-content/uploads/2022/11/Elevacao-de-panturrilha-com-barra.gif", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "extensiones", "imagen": "../img/biblioteca de pierna/extensiones.gif", "reps": "4 series x 12 repeticiones"  },
-                { "nombre": "Avanzadas en smith", "imagen": "../img/biblioteca de pierna/avanzadas.gif" , "reps": "4 series x 12 repeticiones" },
+                { "nombre": "extensiones", "imagen": "../img/biblioteca de pierna/extensiones.gif", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Avanzadas en smith", "imagen": "../img/biblioteca de pierna/avanzadas.gif", "reps": "4 series x 12 repeticiones" },
             ],
             "espalda": [
                 { "nombre": "Peso muerto", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/07/oie_jeWBlFOzCoAY-1.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Pull-ups", "imagen": "https://newlife.com.cy/wp-content/uploads/2019/08/18661301-Wide-Grip-Pull-Up-on-Dip-Cage_Back_720.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Remo con barra", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/07/rowing-barre-min.gif", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Pulldown en polea alta", "imagen": "https://boxlifemagazine.com/wp-content/uploads//2023/07/tirage-vertical-poitrine-min.gif", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Jalon al pecho", "imagen": "../img/biblioteca de espalda/jalon de espalda.gif", "reps": "4 series x 12 repeticiones"  },
-                { "nombre": "Remo con agarre amplio", "imagen": "../img/biblioteca de espalda/remon sentado con agarre amplio.webp" , "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Jalon al pecho", "imagen": "../img/biblioteca de espalda/jalon de espalda.gif", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Remo con agarre amplio", "imagen": "../img/biblioteca de espalda/remon sentado con agarre amplio.webp", "reps": "4 series x 12 repeticiones" },
             ],
             "pecho": [
                 { "nombre": "Press de banca ", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_VZ1q2XQzQfhn.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
@@ -88,7 +88,10 @@ function rutina(usuario) {
             "gluteos": [
                 { "nombre": "Sentadilla búlgara", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_a1pClH2TzpiR.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
                 { "nombre": "Peso muerto con mancuernas", "imagen": "https://paramujerfitness.com/wp-content/uploads/2021/11/peso-muerto-con-mancuerna.gif", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Hip thrust", "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3D1j7D16GUDg2CEePt0Vx_j02LYaoTIbnteUsJMq2WQ&s", "reps": "4 series x 12 repeticiones" }
+                { "nombre": "Hip thrust", "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3D1j7D16GUDg2CEePt0Vx_j02LYaoTIbnteUsJMq2WQ&s", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Peso muerto para gluteos", "imagen": "../img/biblioteca de pierna/peso muerto.webp", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Abductor", "imagen": "../img/biblioteca de pierna/abductores.gif", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Step ups", "imagen": "../img/biblioteca de pierna/weighted-step-up.gif", "reps": "4 series x 12 repeticiones" }
             ]
         },
 
@@ -179,7 +182,10 @@ function rutina(usuario) {
             ],
             "gluteos": [
                 { "nombre": "Sentadilla búlgara", "imagen": "https://i0.wp.com/entrenandoc.com/wp-content/uploads/2023/06/oie_a1pClH2TzpiR.gif?fit=360%2C360&ssl=1", "reps": "4 series x 12 repeticiones" },
-                { "nombre": "Hip Thrusts", "imagen": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Hip-Thrust.gif", "reps": "4 series x 12 repeticiones" }
+                { "nombre": "Hip Thrusts", "imagen": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Hip-Thrust.gif", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Peso muerto para gluteos", "imagen": "../img/biblioteca de pierna/peso muerto.webp", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Abductor", "imagen": "../img/biblioteca de pierna/abductores.gif", "reps": "4 series x 12 repeticiones" },
+                { "nombre": "Step ups", "imagen": "../img/biblioteca de pierna/weighted-step-up.gif", "reps": "4 series x 12 repeticiones" }
             ]
         }
 
@@ -326,16 +332,21 @@ function imprimir(rutina) {
                     contenedorImg.appendChild(img);
                     ejercicioElemento.appendChild(contenedorImg);
 
+                    //crear un contenedor para la informacion de reps de cada ejercicio
+                    const info = document.createElement('div');
+                    info.classList.add('info')
 
                     // Crear un elemento <p> para el nombre del ejercicio
                     const nombreEjercicio = document.createElement('p');
                     nombreEjercicio.textContent = ejercicio.nombre;
-                    ejercicioElemento.appendChild(nombreEjercicio);
+                    info.appendChild(nombreEjercicio);
+
 
                     // Crear un elemento <p> para la cantidad de repeticiones
                     const repsEjercicio = document.createElement('p');
                     repsEjercicio.textContent = `Reps: ${ejercicio.reps}`;
-                    ejercicioElemento.appendChild(repsEjercicio);
+                    info.appendChild(repsEjercicio);
+                    ejercicioElemento.appendChild(info);
 
                     // Agregar el elemento del ejercicio al contenedor del grupo
                     grupoElemento.appendChild(ejercicioElemento);
@@ -363,11 +374,13 @@ function imprimir(rutina) {
 
 
 
+//#################################################### ANIMACIONE #################################################################
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const titulosRutina = document.querySelectorAll('.titulo_dia');
     const bloquesDeEjercicio = document.querySelectorAll('.bloque');
-    const contenedor = document.getElementById('contenedor_rutina');
+    const contenedores = document.getElementsByClassName('contenedor_grupo');
 
 
 
@@ -375,10 +388,24 @@ document.addEventListener('DOMContentLoaded', function () {
         titulo.addEventListener('click', function () {
             // Accede al bloque de ejercicio correspondiente al título
             const bloqueEjercicio = bloquesDeEjercicio[index];
+
             if (bloqueEjercicio) {
-                // Realiza alguna acción con el bloque de ejercicio
+                // Realiza animacion con el bloque de ejercicio
                 bloqueEjercicio.classList.toggle('bloqueActive');
-                // (Opcional) También puedes realizar otras acciones, como mostrar u ocultar más contenido
+
+                // Oculta los demás bloques de ejercicio y registra los elementos ocultos
+                Array.from(contenedores).forEach((contenedor, i) => {
+                    if (i !== index) {
+                        if (i !== index) {
+                            if (contenedor.style.display === "none") {
+                                contenedor.style.display = "block";
+                            } else {
+                                contenedor.style.display = "none";
+                            }
+                        }
+                    }
+                });
+
             }
         });
     });
